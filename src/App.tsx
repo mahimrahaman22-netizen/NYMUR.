@@ -9,7 +9,7 @@ import {
   Instagram, 
   Youtube, 
   Mail, 
-  MessageCircle, 
+  MessageCircle,
   ArrowRight, 
   Layout, 
   Video, 
@@ -22,12 +22,12 @@ import {
 
 // --- Data ---
 const portfolioItems = [
-  { id: 1, title: "Social Media Campaign", category: "Social Media", img: "https://picsum.photos/seed/design1/800/1000" },
-  { id: 2, title: "Modern Branding", category: "Branding", img: "https://picsum.photos/seed/design2/800/800" },
-  { id: 3, title: "YouTube Thumbnail Pack", category: "YouTube", img: "https://picsum.photos/seed/design3/800/600" },
-  { id: 4, title: "Ad Creative Set", category: "Ads", img: "https://picsum.photos/seed/design4/800/1200" },
-  { id: 5, title: "Event Poster", category: "Social Media", img: "https://picsum.photos/seed/design5/800/800" },
-  { id: 6, title: "Tech Branding", category: "Branding", img: "https://picsum.photos/seed/design6/800/1000" },
+  { id: 1, title: "Fosvision Camera Ad", category: "Ad Creatives", img: "https://i.imgur.com/wQXfAXo.jpeg" },
+  { id: 2, title: "Product Ad Creative", category: "Ad Creatives", img: "https://i.imgur.com/A0aOL50.jpeg" },
+  { id: 3, title: "Brand Design", category: "Branding", img: "https://i.imgur.com/17xfNiD.jpeg" },
+  { id: 4, title: "Social Media Post", category: "Social Media", img: "https://i.imgur.com/QFVSDGJ.jpeg" },
+  { id: 5, title: "Creative Design", category: "Social Media", img: "https://i.imgur.com/RAnuAWG.jpeg" },
+  { id: 6, title: "Ad Campaign", category: "Ads", img: "https://i.imgur.com/wQXfAXo.jpeg" },
 ];
 
 const videoItems = [
