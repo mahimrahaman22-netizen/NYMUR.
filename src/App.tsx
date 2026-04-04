@@ -65,17 +65,27 @@ function makeBrandPlaceholders(brandId: string, brandName: string, count: number
   }));
 }
 
-const portfolioItems = [
+// ─── SHUFFLE helper ───────────────────────────────────────────
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const portfolioItems = shuffle([
   ...makePlaceholders("Social Media Post", 20, "smp"),
   ...makePlaceholders("Carousel Post", 20, "crp"),
   ...makePlaceholders("Print Item", 20, "prt"),
   ...makePlaceholders("Branding", 20, "brd"),
   ...makePlaceholders("AI Food Photography", 20, "afp"),
   ...makePlaceholders("Edited Image (Before/After)", 20, "eba"),
-];
+]);
 
 const brandItems: Record<string, { id: string; title: string; brand: string; img: string }[]> = {
-  monno: [
+  monno: shuffle([
     { id: "monno-1",  title: "Monno Design 1",  brand: "monno", img: "https://i.imgur.com/9QsN7zu.jpeg" },
     { id: "monno-2",  title: "Monno Design 2",  brand: "monno", img: "https://i.imgur.com/hEBD40J.jpeg" },
     { id: "monno-3",  title: "Monno Design 3",  brand: "monno", img: "https://i.imgur.com/AeBOOOI.jpeg" },
@@ -93,7 +103,25 @@ const brandItems: Record<string, { id: string; title: string; brand: string; img
     { id: "monno-15", title: "Monno Design 15", brand: "monno", img: "https://i.imgur.com/biOXwdw.jpeg" },
     { id: "monno-16", title: "Monno Design 16", brand: "monno", img: "https://i.imgur.com/y4y5BF2.jpeg" },
     { id: "monno-17", title: "Monno Design 17", brand: "monno", img: "https://i.imgur.com/3TYuQdP.jpeg" },
-  ],
+    { id: "monno-18", title: "Monno Design 18", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczO0EVQTFAtsMZcbBYPN26U9VCTeMmNb4noLY7DhrBn1r8HoN9U119N6hWCl3FPmcaT4YbSawnJW6FlSV9Ps3aqja0CFGDHuWDelXdP-4Q_sbCh4ht8=w1280-no" },
+    { id: "monno-19", title: "Monno Design 19", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczMCVorKHhrKzwaHC0XZhA1lyus358wk3JZxHzPZO3beGvStkYNDjR6AQIZbsyvufjmRexwaokWhmZ4-0JTlLbMsacgP1qBYHSvwXA-iN1hAu6eV8VY=w1280-no" },
+    { id: "monno-20", title: "Monno Design 20", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczOow7ZfYXjis5JM_a9NY7aJh2So9AHK0xCiv5SBJbbUd33WHWg4r9jMAOZ2v2TSFW8DuLih03QEzNA8AbssXILcgwON_15eFUfMIZIKfI0SZw3uhCo=w1280-no" },
+    { id: "monno-21", title: "Monno Design 21", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczNfA6yI_3vbBbrtn16aJJ45Vf9285nwMxAyk8hPXPd2HFY32CCQHNg97Ig5fCLRGUzTAlOy_fvyQdr0kBAp0MN9R0VSxGN6Mrt7Xw947Fq1GU8A7jA=w1280-no" },
+    { id: "monno-22", title: "Monno Design 22", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczPhmZd7mlCPYulC4EHCuO9bKCYLdew0JxdO-cr3i-T96qf5KMrqDXI7JaUTM4hxXXsWg4k7UXXEC96_RyUxRUqddtEBdTk1n9zoJd2Fvwto49BITrY=w1280-no" },
+    { id: "monno-23", title: "Monno Design 23", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczNKz7vznS5Lt5f-XsTMT4LmTEz9Z5CbpZYFby5lOEw628DRp71o9xEY0SveFRK9GIH8a6iKPdr_9zwYZ-ZrTYT1bkZrrlwmqOfQZ1MSATpuE8kMOlQ=w1280-no" },
+    { id: "monno-24", title: "Monno Design 24", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczNAB2I3Zu0CH7emHt8CTGhQ28OhuViZmWBE_v6s7637ormpYpW4d8YKVCk7JYP0ajJdIXzyjb5k6ouk5mqiA9C0GvZ5PbUZB0Z71GYOIMvbyIloAaY=w1280-no" },
+    { id: "monno-25", title: "Monno Design 25", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczO661Z9chpTi2G5jPsLpLVFMkGJPN97JXcHp5r27kIog0ah0Rj31Mijxt10zLQNUhRciptX7myNc1yJR5jA97aXERshpsdSTZL6w1uuvwwBdamai78=w1280-no" },
+    { id: "monno-26", title: "Monno Design 26", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczOnUvVMWbmtxXeN1z35flImwWyoeydVRFA7BvIPVcxAr9MaIlGvPZvgKbulKVopkPTrU9gwvoAOi7acITalcbi6wkb5WGNLJD1QyVYFqRNsw90Wv34=w1280-no" },
+    { id: "monno-27", title: "Monno Design 27", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczPxbQLd18H1ASYyr_TkqyFbLsApbTHs1eS8f_U0YnqGvkKurvd4o5xXBlBJha-Kok7rwTLp4yuXnLkmYpztobDAyrq3fqgYp3s3XI6lMSOYmy-lVS4=w1280-no" },
+    { id: "monno-28", title: "Monno Design 28", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczOaRybBLKkiKV8ZzXz_RvPEPKLK1-tzqq_PRf3lO-cEdDNEzBG-_cwW2Vq5c4tpsOvN-D-wVk-meC_UcCn12JtAGdlwYeO7KO4YnTnr_kAWcO8pJEI=w1280-no" },
+    { id: "monno-29", title: "Monno Design 29", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczPiJK83Kyl9WAVGx159VaLmjSNaDTVzcHzbPGJheA7HODI-JJkYQtgOHSYJBnXpl-jDQtYRSf5pfg2QePofEPVl1eVjg5F4RElVjaigieuwOUHteKQ=w1280-no" },
+    { id: "monno-30", title: "Monno Design 30", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczNcIJ170FHA_v4xp3JkWJ-dw1DIo6F14DzWK9LiqV8lEjklXbvoMNhMfBEC42h1dzotB9xJjVWrVDDEjCOTSo1S70OFbpGPXcABjAhL8EjsIRZ5eM8=w1280-no" },
+    { id: "monno-31", title: "Monno Design 31", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczPMRPHn1kUI52355PoUs-Gfd_8cXLQMVzk5iwR1Vr7HfEpXofryKeJGI5yJwW3aHKPwJf5AKNO8nhuQ9OldGX5otc7rsIc9DmgbGex-hXmpf4gEHoY=w1280-no" },
+    { id: "monno-32", title: "Monno Design 32", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczO2_4xRcu7aLoXaXbTEsSNn67Vv3jaoAivCVcm2mzJDIxK-r75DgBq8j0SNMye2Fq22xI0OWmbJXfbeTLFaUhOP6qc8lBPSmsU_fqLE1VSCsnr8nBs=w1280-no" },
+    { id: "monno-33", title: "Monno Design 33", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczMj61gHb3umRdEgqK4yf8fHPjGSeEZt-Gn7GhSGhrGEi--1jb1CozoxfHn5mMAPjFj7mR9Vp8Pj07rrLSWzAlX4-OzSkPOWf32iuNt1oM2BZQ_lN8g=w1280-no" },
+    { id: "monno-34", title: "Monno Design 34", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczN0xu6Ds5fxlZbG3mzqp3dDLuz6Oic0iP9MY0rgYF0mFetsHFijUKFaD7X6gPYMOKhSSprRdFAB9Qin663NKqLpXfJ9V57w_GvyqrNNYNHb7YUv5w0=w1280-no" },
+    { id: "monno-35", title: "Monno Design 35", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczNpdEcIqNGMvXaojj-GKoIKMSvMc-0rGaW1pOtcTiL7H5XVVD2CaWhFI2rR4d1HUo8aWj0Tpafk4wduHYho00fYmNyfil8coqGFc11PX0s6Pp31vVU=w1280-no" },
+  ]),
   wokwot: makeBrandPlaceholders("wokwot", "Wokwot", 20),
   soojuicy: makeBrandPlaceholders("soojuicy", "Soo Juicy", 20),
   kebab: makeBrandPlaceholders("kebab", "Kebab N Curries", 20),
@@ -580,58 +608,73 @@ export default function App() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="space-y-3"
               >
-                {BRANDS.map((brand) => {
-                  const isOpen = activeBrand === brand.id;
-                  const items = brandItems[brand.id] || [];
-                  return (
-                    <div key={brand.id} className="rounded-2xl border border-white/5 overflow-hidden">
-                      {/* Accordion Header */}
+                {/* Brand buttons — horizontal side by side */}
+                <div className="flex flex-wrap gap-3 mb-8">
+                  {BRANDS.map((brand) => {
+                    const isOpen = activeBrand === brand.id;
+                    return (
                       <button
+                        key={brand.id}
                         onClick={() => setActiveBrand(isOpen ? "" : brand.id)}
-                        className="w-full flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"
-                        style={isOpen ? { borderBottom: `1px solid ${brand.color}30` } : {}}
+                        className="flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold transition-all border"
+                        style={
+                          isOpen
+                            ? { backgroundColor: brand.color + "20", borderColor: brand.color, color: brand.color, boxShadow: `0 0 14px ${brand.color}40` }
+                            : { borderColor: "rgba(255,255,255,0.1)", color: "#9ca3af" }
+                        }
                       >
-                        <div className="flex items-center gap-4">
-                          <div
-                            className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white"
-                            style={{ backgroundColor: brand.color + "25", border: `1px solid ${brand.color}50` }}
-                          >
-                            <span style={{ color: brand.color }}>{brand.name[0]}</span>
-                          </div>
-                          <div className="text-left">
-                            <p className="font-bold text-white">{brand.name}</p>
-                            <p className="text-xs text-subtext">{items.length} designs</p>
-                          </div>
-                        </div>
-                        <motion.div
-                          animate={{ rotate: isOpen ? 180 : 0 }}
-                          transition={{ duration: 0.2 }}
+                        <span
+                          className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
+                          style={{ backgroundColor: brand.color + "30", color: brand.color }}
                         >
-                          <ChevronDown className="w-5 h-5 text-subtext" />
-                        </motion.div>
+                          {brand.name[0]}
+                        </span>
+                        {brand.name}
+                        <span className="text-xs opacity-60">({(brandItems[brand.id] || []).length})</span>
                       </button>
+                    );
+                  })}
+                </div>
 
-                      {/* Accordion Content */}
-                      <AnimatePresence>
-                        {isOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="overflow-hidden"
-                          >
-                            <div className="p-6">
-                              <ImageGrid key={brand.id} items={items} />
+                {/* Brand content — expands below */}
+                <AnimatePresence mode="wait">
+                  {activeBrand && (
+                    <motion.div
+                      key={activeBrand}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.25 }}
+                    >
+                      {/* Brand header strip */}
+                      {(() => {
+                        const brand = BRANDS.find(b => b.id === activeBrand);
+                        const items = brandItems[activeBrand] || [];
+                        return (
+                          <>
+                            <div
+                              className="flex items-center gap-3 mb-6 px-5 py-3 rounded-xl"
+                              style={{ backgroundColor: brand?.color + "10", border: `1px solid ${brand?.color}30` }}
+                            >
+                              <div
+                                className="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm"
+                                style={{ backgroundColor: brand?.color + "25", color: brand?.color }}
+                              >
+                                {brand?.name[0]}
+                              </div>
+                              <div>
+                                <p className="font-bold text-white">{brand?.name}</p>
+                                <p className="text-xs text-subtext">{items.length} designs</p>
+                              </div>
                             </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  );
-                })}
+                            <ImageGrid key={activeBrand} items={items} />
+                          </>
+                        );
+                      })()}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             )}
           </AnimatePresence>
