@@ -36,7 +36,8 @@ const CATEGORIES = [
 
 // ─── BRANDS ───────────────────────────────────────────────────
 const BRANDS = [
-  { id: "wokwoy", name: "Wokwot", color: "#FF6B35" },
+  { id: "monno", name: "Monno", color: "#00C9FF" },
+  { id: "wokwot", name: "Wokwot", color: "#FF6B35" },
   { id: "soojuicy", name: "Soo Juicy", color: "#FF3CAC" },
   { id: "kebab", name: "Kebab N Curries", color: "#F9A825" },
   { id: "secondcup", name: "Second Cup", color: "#6D4C41" },
@@ -74,6 +75,25 @@ const portfolioItems = [
 ];
 
 const brandItems: Record<string, { id: string; title: string; brand: string; img: string }[]> = {
+  monno: [
+    { id: "monno-1",  title: "Monno Design 1",  brand: "monno", img: "https://i.imgur.com/9QsN7zu.jpeg" },
+    { id: "monno-2",  title: "Monno Design 2",  brand: "monno", img: "https://i.imgur.com/hEBD40J.jpeg" },
+    { id: "monno-3",  title: "Monno Design 3",  brand: "monno", img: "https://i.imgur.com/AeBOOOI.jpeg" },
+    { id: "monno-4",  title: "Monno Design 4",  brand: "monno", img: "https://i.imgur.com/h68CsP5.jpeg" },
+    { id: "monno-5",  title: "Monno Design 5",  brand: "monno", img: "https://i.imgur.com/h4cXyTL.jpeg" },
+    { id: "monno-6",  title: "Monno Design 6",  brand: "monno", img: "https://i.imgur.com/eWHynVz.jpeg" },
+    { id: "monno-7",  title: "Monno Design 7",  brand: "monno", img: "https://i.imgur.com/ZUjBSYt.jpeg" },
+    { id: "monno-8",  title: "Monno Design 8",  brand: "monno", img: "https://i.imgur.com/VaCiAM3.jpeg" },
+    { id: "monno-9",  title: "Monno Design 9",  brand: "monno", img: "https://i.imgur.com/5spgvES.jpeg" },
+    { id: "monno-10", title: "Monno Design 10", brand: "monno", img: "https://i.imgur.com/3WHBsLk.jpeg" },
+    { id: "monno-11", title: "Monno Design 11", brand: "monno", img: "https://i.imgur.com/Vq0tPwB.jpeg" },
+    { id: "monno-12", title: "Monno Design 12", brand: "monno", img: "https://i.imgur.com/gfJwJdG.jpeg" },
+    { id: "monno-13", title: "Monno Design 13", brand: "monno", img: "https://i.imgur.com/E6bZzL7.jpeg" },
+    { id: "monno-14", title: "Monno Design 14", brand: "monno", img: "https://i.imgur.com/CaxbxaH.jpeg" },
+    { id: "monno-15", title: "Monno Design 15", brand: "monno", img: "https://i.imgur.com/biOXwdw.jpeg" },
+    { id: "monno-16", title: "Monno Design 16", brand: "monno", img: "https://i.imgur.com/y4y5BF2.jpeg" },
+    { id: "monno-17", title: "Monno Design 17", brand: "monno", img: "https://i.imgur.com/3TYuQdP.jpeg" },
+  ],
   wokwot: makeBrandPlaceholders("wokwot", "Wokwot", 20),
   soojuicy: makeBrandPlaceholders("soojuicy", "Soo Juicy", 20),
   kebab: makeBrandPlaceholders("kebab", "Kebab N Curries", 20),
@@ -148,11 +168,58 @@ const SectionTitle = ({ children, subtitle }: { children: React.ReactNode; subti
   </div>
 );
 
-// ─── IMAGE GRID with See More ──────────────────────────────────
+// ─── LIGHTBOX ─────────────────────────────────────────────────
+const Lightbox = ({ img, title, onClose }: { img: string; title: string; onClose: () => void }) => {
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", handler);
+    document.body.style.overflow = "hidden";
+    return () => { window.removeEventListener("keydown", handler); document.body.style.overflow = ""; };
+  }, [onClose]);
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+        className="fixed inset-0 z-[999] bg-black/90 backdrop-blur-md flex items-center justify-center p-4"
+      >
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all text-white text-xl font-bold z-10"
+        >
+          ✕
+        </button>
+
+        {/* Image */}
+        <motion.img
+          initial={{ scale: 0.85, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.85, opacity: 0 }}
+          transition={{ type: "spring", damping: 25 }}
+          src={img}
+          alt={title}
+          onClick={(e) => e.stopPropagation()}
+          referrerPolicy="no-referrer"
+          className="max-w-full max-h-[90vh] rounded-2xl object-contain shadow-2xl"
+        />
+      </motion.div>
+    </AnimatePresence>
+  );
+};
+
+// ─── IMAGE GRID with See More + Lightbox ──────────────────────
 const ImageGrid = ({ items }: { items: { id: string; title: string; img: string; category?: string; brand?: string }[] }) => {
   const [visible, setVisible] = useState(8);
+  const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
+
   return (
     <>
+      {lightbox && <Lightbox img={lightbox.img} title={lightbox.title} onClose={() => setLightbox(null)} />}
+
       <motion.div layout className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
         <AnimatePresence>
           {items.slice(0, visible).map((item, index) => (
@@ -163,6 +230,7 @@ const ImageGrid = ({ items }: { items: { id: string; title: string; img: string;
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ delay: Math.min(index * 0.03, 0.3) }}
+              onClick={() => setLightbox({ img: item.img, title: item.title })}
               className="group relative overflow-hidden rounded-2xl bg-primary border border-white/5 hover:neon-border cursor-pointer break-inside-avoid mb-6"
             >
               <img
@@ -260,14 +328,12 @@ const Typewriter = ({ texts }: { texts: string[] }) => {
 // ─── MAIN APP ──────────────────────────────────────────────────
 export default function App() {
   const [activeCategory, setActiveCategory] = useState("Social Media Post");
-  const [activeBrand, setActiveBrand] = useState("wokwot");
+  const [activeBrand, setActiveBrand] = useState("monno");
   const [workTab, setWorkTab] = useState<"category" | "brand">("category");
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 500], [0, 100]);
 
   const filtered = portfolioItems.filter((item) => item.category === activeCategory);
-  const brandFiltered = brandItems[activeBrand] || [];
-  const activeBrandData = BRANDS.find((b) => b.id === activeBrand);
 
   return (
     <div className="min-h-screen bg-primary selection:bg-neon-blue selection:text-white overflow-x-hidden">
@@ -514,49 +580,58 @@ export default function App() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
+                className="space-y-3"
               >
-                {/* Brand tabs */}
-                <div className="flex flex-wrap gap-3 mb-8">
-                  {BRANDS.map((brand) => (
-                    <button
-                      key={brand.id}
-                      onClick={() => setActiveBrand(brand.id)}
-                      className={`px-5 py-2 rounded-full text-sm font-semibold transition-all border ${
-                        activeBrand === brand.id
-                          ? "text-white border-transparent"
-                          : "border-white/10 text-subtext hover:text-white"
-                      }`}
-                      style={
-                        activeBrand === brand.id
-                          ? { backgroundColor: brand.color, borderColor: brand.color, boxShadow: `0 0 16px ${brand.color}60` }
-                          : {}
-                      }
-                    >
-                      {brand.name}
-                    </button>
-                  ))}
-                </div>
+                {BRANDS.map((brand) => {
+                  const isOpen = activeBrand === brand.id;
+                  const items = brandItems[brand.id] || [];
+                  return (
+                    <div key={brand.id} className="rounded-2xl border border-white/5 overflow-hidden">
+                      {/* Accordion Header */}
+                      <button
+                        onClick={() => setActiveBrand(isOpen ? "" : brand.id)}
+                        className="w-full flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"
+                        style={isOpen ? { borderBottom: `1px solid ${brand.color}30` } : {}}
+                      >
+                        <div className="flex items-center gap-4">
+                          <div
+                            className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white"
+                            style={{ backgroundColor: brand.color + "25", border: `1px solid ${brand.color}50` }}
+                          >
+                            <span style={{ color: brand.color }}>{brand.name[0]}</span>
+                          </div>
+                          <div className="text-left">
+                            <p className="font-bold text-white">{brand.name}</p>
+                            <p className="text-xs text-subtext">{items.length} designs</p>
+                          </div>
+                        </div>
+                        <motion.div
+                          animate={{ rotate: isOpen ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <ChevronDown className="w-5 h-5 text-subtext" />
+                        </motion.div>
+                      </button>
 
-                {/* Brand header */}
-                <motion.div
-                  key={activeBrand}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="flex items-center gap-4 mb-8 p-5 rounded-2xl bg-primary/60 border border-white/5"
-                >
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-xl"
-                    style={{ backgroundColor: activeBrandData?.color + "30", border: `1px solid ${activeBrandData?.color}60` }}
-                  >
-                    {activeBrandData?.name[0]}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold">{activeBrandData?.name}</h3>
-                    <p className="text-subtext text-sm">{brandFiltered.length} designs</p>
-                  </div>
-                </motion.div>
-
-                <ImageGrid key={activeBrand} items={brandFiltered} />
+                      {/* Accordion Content */}
+                      <AnimatePresence>
+                        {isOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            className="overflow-hidden"
+                          >
+                            <div className="p-6">
+                              <ImageGrid key={brand.id} items={items} />
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
               </motion.div>
             )}
           </AnimatePresence>
