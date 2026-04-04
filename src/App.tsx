@@ -65,7 +65,7 @@ function makeBrandPlaceholders(brandId: string, brandName: string, count: number
   }));
 }
 
-// ─── SHUFFLE helper ───────────────────────────────────────────
+// ─── SHUFFLE helper (Fisher-Yates — no duplicates) ────────────
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -75,17 +75,18 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-const portfolioItems = shuffle([
-  ...makePlaceholders("Social Media Post", 20, "smp"),
-  ...makePlaceholders("Carousel Post", 20, "crp"),
-  ...makePlaceholders("Print Item", 20, "prt"),
-  ...makePlaceholders("Branding", 20, "brd"),
-  ...makePlaceholders("AI Food Photography", 20, "afp"),
-  ...makePlaceholders("Edited Image (Before/After)", 20, "eba"),
-]);
+// Each category shuffled individually so same image never appears twice
+const portfolioItems = [
+  ...shuffle(makePlaceholders("Social Media Post", 20, "smp")),
+  ...shuffle(makePlaceholders("Carousel Post", 20, "crp")),
+  ...shuffle(makePlaceholders("Print Item", 20, "prt")),
+  ...shuffle(makePlaceholders("Branding", 20, "brd")),
+  ...shuffle(makePlaceholders("AI Food Photography", 20, "afp")),
+  ...shuffle(makePlaceholders("Edited Image (Before/After)", 20, "eba")),
+];
 
 const brandItems: Record<string, { id: string; title: string; brand: string; img: string }[]> = {
-  monno: shuffle([
+  monno: [
     { id: "monno-1",  title: "Monno Design 1",  brand: "monno", img: "https://i.imgur.com/9QsN7zu.jpeg" },
     { id: "monno-2",  title: "Monno Design 2",  brand: "monno", img: "https://i.imgur.com/hEBD40J.jpeg" },
     { id: "monno-3",  title: "Monno Design 3",  brand: "monno", img: "https://i.imgur.com/AeBOOOI.jpeg" },
@@ -121,7 +122,7 @@ const brandItems: Record<string, { id: string; title: string; brand: string; img
     { id: "monno-33", title: "Monno Design 33", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczMj61gHb3umRdEgqK4yf8fHPjGSeEZt-Gn7GhSGhrGEi--1jb1CozoxfHn5mMAPjFj7mR9Vp8Pj07rrLSWzAlX4-OzSkPOWf32iuNt1oM2BZQ_lN8g=w1280-no" },
     { id: "monno-34", title: "Monno Design 34", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczN0xu6Ds5fxlZbG3mzqp3dDLuz6Oic0iP9MY0rgYF0mFetsHFijUKFaD7X6gPYMOKhSSprRdFAB9Qin663NKqLpXfJ9V57w_GvyqrNNYNHb7YUv5w0=w1280-no" },
     { id: "monno-35", title: "Monno Design 35", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczNpdEcIqNGMvXaojj-GKoIKMSvMc-0rGaW1pOtcTiL7H5XVVD2CaWhFI2rR4d1HUo8aWj0Tpafk4wduHYho00fYmNyfil8coqGFc11PX0s6Pp31vVU=w1280-no" },
-  ]),
+  ],
   wokwot: makeBrandPlaceholders("wokwot", "Wokwot", 20),
   soojuicy: makeBrandPlaceholders("soojuicy", "Soo Juicy", 20),
   kebab: makeBrandPlaceholders("kebab", "Kebab N Curries", 20),
