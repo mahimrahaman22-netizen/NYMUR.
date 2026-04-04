@@ -75,53 +75,54 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-// Monno images — same images used in Social Media Post category
-const monnoImgs = [
-  { id: "smp-monno-1",  title: "Monno Design 1",  category: "Social Media Post", img: "https://i.imgur.com/9QsN7zu.jpeg" },
-  { id: "smp-monno-2",  title: "Monno Design 2",  category: "Social Media Post", img: "https://i.imgur.com/hEBD40J.jpeg" },
-  { id: "smp-monno-3",  title: "Monno Design 3",  category: "Social Media Post", img: "https://i.imgur.com/AeBOOOI.jpeg" },
-  { id: "smp-monno-4",  title: "Monno Design 4",  category: "Social Media Post", img: "https://i.imgur.com/h68CsP5.jpeg" },
-  { id: "smp-monno-5",  title: "Monno Design 5",  category: "Social Media Post", img: "https://i.imgur.com/h4cXyTL.jpeg" },
-  { id: "smp-monno-6",  title: "Monno Design 6",  category: "Social Media Post", img: "https://i.imgur.com/eWHynVz.jpeg" },
-  { id: "smp-monno-7",  title: "Monno Design 7",  category: "Social Media Post", img: "https://i.imgur.com/ZUjBSYt.jpeg" },
-  { id: "smp-monno-8",  title: "Monno Design 8",  category: "Social Media Post", img: "https://i.imgur.com/VaCiAM3.jpeg" },
-  { id: "smp-monno-9",  title: "Monno Design 9",  category: "Social Media Post", img: "https://i.imgur.com/5spgvES.jpeg" },
-  { id: "smp-monno-10", title: "Monno Design 10", category: "Social Media Post", img: "https://i.imgur.com/3WHBsLk.jpeg" },
-  { id: "smp-monno-11", title: "Monno Design 11", category: "Social Media Post", img: "https://i.imgur.com/Vq0tPwB.jpeg" },
-  { id: "smp-monno-12", title: "Monno Design 12", category: "Social Media Post", img: "https://i.imgur.com/gfJwJdG.jpeg" },
-  { id: "smp-monno-13", title: "Monno Design 13", category: "Social Media Post", img: "https://i.imgur.com/E6bZzL7.jpeg" },
-  { id: "smp-monno-14", title: "Monno Design 14", category: "Social Media Post", img: "https://i.imgur.com/CaxbxaH.jpeg" },
-  { id: "smp-monno-15", title: "Monno Design 15", category: "Social Media Post", img: "https://i.imgur.com/biOXwdw.jpeg" },
-  { id: "smp-monno-16", title: "Monno Design 16", category: "Social Media Post", img: "https://i.imgur.com/y4y5BF2.jpeg" },
-  { id: "smp-monno-17", title: "Monno Design 17", category: "Social Media Post", img: "https://i.imgur.com/3TYuQdP.jpeg" },
-  { id: "smp-monno-18", title: "Monno Design 18", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczO0EVQTFAtsMZcbBYPN26U9VCTeMmNb4noLY7DhrBn1r8HoN9U119N6hWCl3FPmcaT4YbSawnJW6FlSV9Ps3aqja0CFGDHuWDelXdP-4Q_sbCh4ht8=w1280-no" },
-  { id: "smp-monno-19", title: "Monno Design 19", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczMCVorKHhrKzwaHC0XZhA1lyus358wk3JZxHzPZO3beGvStkYNDjR6AQIZbsyvufjmRexwaokWhmZ4-0JTlLbMsacgP1qBYHSvwXA-iN1hAu6eV8VY=w1280-no" },
-  { id: "smp-monno-20", title: "Monno Design 20", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczOow7ZfYXjis5JM_a9NY7aJh2So9AHK0xCiv5SBJbbUd33WHWg4r9jMAOZ2v2TSFW8DuLih03QEzNA8AbssXILcgwON_15eFUfMIZIKfI0SZw3uhCo=w1280-no" },
-  { id: "smp-monno-21", title: "Monno Design 21", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNfA6yI_3vbBbrtn16aJJ45Vf9285nwMxAyk8hPXPd2HFY32CCQHNg97Ig5fCLRGUzTAlOy_fvyQdr0kBAp0MN9R0VSxGN6Mrt7Xw947Fq1GU8A7jA=w1280-no" },
-  { id: "smp-monno-22", title: "Monno Design 22", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczPhmZd7mlCPYulC4EHCuO9bKCYLdew0JxdO-cr3i-T96qf5KMrqDXI7JaUTM4hxXXsWg4k7UXXEC96_RyUxRUqddtEBdTk1n9zoJd2Fvwto49BITrY=w1280-no" },
-  { id: "smp-monno-23", title: "Monno Design 23", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNKz7vznS5Lt5f-XsTMT4LmTEz9Z5CbpZYFby5lOEw628DRp71o9xEY0SveFRK9GIH8a6iKPdr_9zwYZ-ZrTYT1bkZrrlwmqOfQZ1MSATpuE8kMOlQ=w1280-no" },
-  { id: "smp-monno-24", title: "Monno Design 24", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNAB2I3Zu0CH7emHt8CTGhQ28OhuViZmWBE_v6s7637ormpYpW4d8YKVCk7JYP0ajJdIXzyjb5k6ouk5mqiA9C0GvZ5PbUZB0Z71GYOIMvbyIloAaY=w1280-no" },
-  { id: "smp-monno-25", title: "Monno Design 25", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczO661Z9chpTi2G5jPsLpLVFMkGJPN97JXcHp5r27kIog0ah0Rj31Mijxt10zLQNUhRciptX7myNc1yJR5jA97aXERshpsdSTZL6w1uuvwwBdamai78=w1280-no" },
-  { id: "smp-monno-26", title: "Monno Design 26", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczOnUvVMWbmtxXeN1z35flImwWyoeydVRFA7BvIPVcxAr9MaIlGvPZvgKbulKVopkPTrU9gwvoAOi7acITalcbi6wkb5WGNLJD1QyVYFqRNsw90Wv34=w1280-no" },
-  { id: "smp-monno-27", title: "Monno Design 27", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczPxbQLd18H1ASYyr_TkqyFbLsApbTHs1eS8f_U0YnqGvkKurvd4o5xXBlBJha-Kok7rwTLp4yuXnLkmYpztobDAyrq3fqgYp3s3XI6lMSOYmy-lVS4=w1280-no" },
-  { id: "smp-monno-28", title: "Monno Design 28", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczOaRybBLKkiKV8ZzXz_RvPEPKLK1-tzqq_PRf3lO-cEdDNEzBG-_cwW2Vq5c4tpsOvN-D-wVk-meC_UcCn12JtAGdlwYeO7KO4YnTnr_kAWcO8pJEI=w1280-no" },
-  { id: "smp-monno-29", title: "Monno Design 29", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczPiJK83Kyl9WAVGx159VaLmjSNaDTVzcHzbPGJheA7HODI-JJkYQtgOHSYJBnXpl-jDQtYRSf5pfg2QePofEPVl1eVjg5F4RElVjaigieuwOUHteKQ=w1280-no" },
-  { id: "smp-monno-30", title: "Monno Design 30", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNcIJ170FHA_v4xp3JkWJ-dw1DIo6F14DzWK9LiqV8lEjklXbvoMNhMfBEC42h1dzotB9xJjVWrVDDEjCOTSo1S70OFbpGPXcABjAhL8EjsIRZ5eM8=w1280-no" },
-  { id: "smp-monno-31", title: "Monno Design 31", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczPMRPHn1kUI52355PoUs-Gfd_8cXLQMVzk5iwR1Vr7HfEpXofryKeJGI5yJwW3aHKPwJf5AKNO8nhuQ9OldGX5otc7rsIc9DmgbGex-hXmpf4gEHoY=w1280-no" },
-  { id: "smp-monno-32", title: "Monno Design 32", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczO2_4xRcu7aLoXaXbTEsSNn67Vv3jaoAivCVcm2mzJDIxK-r75DgBq8j0SNMye2Fq22xI0OWmbJXfbeTLFaUhOP6qc8lBPSmsU_fqLE1VSCsnr8nBs=w1280-no" },
-  { id: "smp-monno-33", title: "Monno Design 33", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczMj61gHb3umRdEgqK4yf8fHPjGSeEZt-Gn7GhSGhrGEi--1jb1CozoxfHn5mMAPjFj7mR9Vp8Pj07rrLSWzAlX4-OzSkPOWf32iuNt1oM2BZQ_lN8g=w1280-no" },
-  { id: "smp-monno-34", title: "Monno Design 34", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczN0xu6Ds5fxlZbG3mzqp3dDLuz6Oic0iP9MY0rgYF0mFetsHFijUKFaD7X6gPYMOKhSSprRdFAB9Qin663NKqLpXfJ9V57w_GvyqrNNYNHb7YUv5w0=w1280-no" },
-  { id: "smp-monno-35", title: "Monno Design 35", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNpdEcIqNGMvXaojj-GKoIKMSvMc-0rGaW1pOtcTiL7H5XVVD2CaWhFI2rR4d1HUo8aWj0Tpafk4wduHYho00fYmNyfil8coqGFc11PX0s6Pp31vVU=w1280-no" },
+// Social Media Post — real Monno images (same 35, no duplicates)
+const monnoAsSocialMedia = [
+  { id: "smp-1",  title: "Monno Design 1",  category: "Social Media Post", img: "https://i.imgur.com/9QsN7zu.jpeg" },
+  { id: "smp-2",  title: "Monno Design 2",  category: "Social Media Post", img: "https://i.imgur.com/hEBD40J.jpeg" },
+  { id: "smp-3",  title: "Monno Design 3",  category: "Social Media Post", img: "https://i.imgur.com/AeBOOOI.jpeg" },
+  { id: "smp-4",  title: "Monno Design 4",  category: "Social Media Post", img: "https://i.imgur.com/h68CsP5.jpeg" },
+  { id: "smp-5",  title: "Monno Design 5",  category: "Social Media Post", img: "https://i.imgur.com/h4cXyTL.jpeg" },
+  { id: "smp-6",  title: "Monno Design 6",  category: "Social Media Post", img: "https://i.imgur.com/eWHynVz.jpeg" },
+  { id: "smp-7",  title: "Monno Design 7",  category: "Social Media Post", img: "https://i.imgur.com/ZUjBSYt.jpeg" },
+  { id: "smp-8",  title: "Monno Design 8",  category: "Social Media Post", img: "https://i.imgur.com/VaCiAM3.jpeg" },
+  { id: "smp-9",  title: "Monno Design 9",  category: "Social Media Post", img: "https://i.imgur.com/5spgvES.jpeg" },
+  { id: "smp-10", title: "Monno Design 10", category: "Social Media Post", img: "https://i.imgur.com/3WHBsLk.jpeg" },
+  { id: "smp-11", title: "Monno Design 11", category: "Social Media Post", img: "https://i.imgur.com/Vq0tPwB.jpeg" },
+  { id: "smp-12", title: "Monno Design 12", category: "Social Media Post", img: "https://i.imgur.com/gfJwJdG.jpeg" },
+  { id: "smp-13", title: "Monno Design 13", category: "Social Media Post", img: "https://i.imgur.com/E6bZzL7.jpeg" },
+  { id: "smp-14", title: "Monno Design 14", category: "Social Media Post", img: "https://i.imgur.com/CaxbxaH.jpeg" },
+  { id: "smp-15", title: "Monno Design 15", category: "Social Media Post", img: "https://i.imgur.com/biOXwdw.jpeg" },
+  { id: "smp-16", title: "Monno Design 16", category: "Social Media Post", img: "https://i.imgur.com/y4y5BF2.jpeg" },
+  { id: "smp-17", title: "Monno Design 17", category: "Social Media Post", img: "https://i.imgur.com/3TYuQdP.jpeg" },
+  { id: "smp-18", title: "Monno Design 18", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczO0EVQTFAtsMZcbBYPN26U9VCTeMmNb4noLY7DhrBn1r8HoN9U119N6hWCl3FPmcaT4YbSawnJW6FlSV9Ps3aqja0CFGDHuWDelXdP-4Q_sbCh4ht8=w1280-no" },
+  { id: "smp-19", title: "Monno Design 19", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczMCVorKHhrKzwaHC0XZhA1lyus358wk3JZxHzPZO3beGvStkYNDjR6AQIZbsyvufjmRexwaokWhmZ4-0JTlLbMsacgP1qBYHSvwXA-iN1hAu6eV8VY=w1280-no" },
+  { id: "smp-20", title: "Monno Design 20", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczOow7ZfYXjis5JM_a9NY7aJh2So9AHK0xCiv5SBJbbUd33WHWg4r9jMAOZ2v2TSFW8DuLih03QEzNA8AbssXILcgwON_15eFUfMIZIKfI0SZw3uhCo=w1280-no" },
+  { id: "smp-21", title: "Monno Design 21", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNfA6yI_3vbBbrtn16aJJ45Vf9285nwMxAyk8hPXPd2HFY32CCQHNg97Ig5fCLRGUzTAlOy_fvyQdr0kBAp0MN9R0VSxGN6Mrt7Xw947Fq1GU8A7jA=w1280-no" },
+  { id: "smp-22", title: "Monno Design 22", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczPhmZd7mlCPYulC4EHCuO9bKCYLdew0JxdO-cr3i-T96qf5KMrqDXI7JaUTM4hxXXsWg4k7UXXEC96_RyUxRUqddtEBdTk1n9zoJd2Fvwto49BITrY=w1280-no" },
+  { id: "smp-23", title: "Monno Design 23", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNKz7vznS5Lt5f-XsTMT4LmTEz9Z5CbpZYFby5lOEw628DRp71o9xEY0SveFRK9GIH8a6iKPdr_9zwYZ-ZrTYT1bkZrrlwmqOfQZ1MSATpuE8kMOlQ=w1280-no" },
+  { id: "smp-24", title: "Monno Design 24", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNAB2I3Zu0CH7emHt8CTGhQ28OhuViZmWBE_v6s7637ormpYpW4d8YKVCk7JYP0ajJdIXzyjb5k6ouk5mqiA9C0GvZ5PbUZB0Z71GYOIMvbyIloAaY=w1280-no" },
+  { id: "smp-25", title: "Monno Design 25", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczO661Z9chpTi2G5jPsLpLVFMkGJPN97JXcHp5r27kIog0ah0Rj31Mijxt10zLQNUhRciptX7myNc1yJR5jA97aXERshpsdSTZL6w1uuvwwBdamai78=w1280-no" },
+  { id: "smp-26", title: "Monno Design 26", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczOnUvVMWbmtxXeN1z35flImwWyoeydVRFA7BvIPVcxAr9MaIlGvPZvgKbulKVopkPTrU9gwvoAOi7acITalcbi6wkb5WGNLJD1QyVYFqRNsw90Wv34=w1280-no" },
+  { id: "smp-27", title: "Monno Design 27", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczPxbQLd18H1ASYyr_TkqyFbLsApbTHs1eS8f_U0YnqGvkKurvd4o5xXBlBJha-Kok7rwTLp4yuXnLkmYpztobDAyrq3fqgYp3s3XI6lMSOYmy-lVS4=w1280-no" },
+  { id: "smp-28", title: "Monno Design 28", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczOaRybBLKkiKV8ZzXz_RvPEPKLK1-tzqq_PRf3lO-cEdDNEzBG-_cwW2Vq5c4tpsOvN-D-wVk-meC_UcCn12JtAGdlwYeO7KO4YnTnr_kAWcO8pJEI=w1280-no" },
+  { id: "smp-29", title: "Monno Design 29", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczPiJK83Kyl9WAVGx159VaLmjSNaDTVzcHzbPGJheA7HODI-JJkYQtgOHSYJBnXpl-jDQtYRSf5pfg2QePofEPVl1eVjg5F4RElVjaigieuwOUHteKQ=w1280-no" },
+  { id: "smp-30", title: "Monno Design 30", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNcIJ170FHA_v4xp3JkWJ-dw1DIo6F14DzWK9LiqV8lEjklXbvoMNhMfBEC42h1dzotB9xJjVWrVDDEjCOTSo1S70OFbpGPXcABjAhL8EjsIRZ5eM8=w1280-no" },
+  { id: "smp-31", title: "Monno Design 31", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczPMRPHn1kUI52355PoUs-Gfd_8cXLQMVzk5iwR1Vr7HfEpXofryKeJGI5yJwW3aHKPwJf5AKNO8nhuQ9OldGX5otc7rsIc9DmgbGex-hXmpf4gEHoY=w1280-no" },
+  { id: "smp-32", title: "Monno Design 32", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczO2_4xRcu7aLoXaXbTEsSNn67Vv3jaoAivCVcm2mzJDIxK-r75DgBq8j0SNMye2Fq22xI0OWmbJXfbeTLFaUhOP6qc8lBPSmsU_fqLE1VSCsnr8nBs=w1280-no" },
+  { id: "smp-33", title: "Monno Design 33", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczMj61gHb3umRdEgqK4yf8fHPjGSeEZt-Gn7GhSGhrGEi--1jb1CozoxfHn5mMAPjFj7mR9Vp8Pj07rrLSWzAlX4-OzSkPOWf32iuNt1oM2BZQ_lN8g=w1280-no" },
+  { id: "smp-34", title: "Monno Design 34", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczN0xu6Ds5fxlZbG3mzqp3dDLuz6Oic0iP9MY0rgYF0mFetsHFijUKFaD7X6gPYMOKhSSprRdFAB9Qin663NKqLpXfJ9V57w_GvyqrNNYNHb7YUv5w0=w1280-no" },
+  { id: "smp-35", title: "Monno Design 35", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNpdEcIqNGMvXaojj-GKoIKMSvMc-0rGaW1pOtcTiL7H5XVVD2CaWhFI2rR4d1HUo8aWj0Tpafk4wduHYho00fYmNyfil8coqGFc11PX0s6Pp31vVU=w1280-no" },
 ];
 
-// Each category shuffled — Social Media Post uses real Monno images
+// portfolioItems — Social Media Post gets real images, rest stay as placeholders
+// shuffle() runs once at page load — stable until reload or tab switch
 const portfolioItems = [
-  ...shuffle(monnoImgs),
-  ...shuffle(makePlaceholders("Carousel Post", 20, "crp")),
-  ...shuffle(makePlaceholders("Print Item", 20, "prt")),
-  ...shuffle(makePlaceholders("Branding", 20, "brd")),
-  ...shuffle(makePlaceholders("AI Food Photography", 20, "afp")),
-  ...shuffle(makePlaceholders("Edited Image (Before/After)", 20, "eba")),
+  ...shuffle(monnoAsSocialMedia),
+  ...makePlaceholders("Carousel Post", 20, "crp"),
+  ...makePlaceholders("Print Item", 20, "prt"),
+  ...makePlaceholders("Branding", 20, "brd"),
+  ...makePlaceholders("AI Food Photography", 20, "afp"),
+  ...makePlaceholders("Edited Image (Before/After)", 20, "eba"),
 ];
 
 const brandItems: Record<string, { id: string; title: string; brand: string; img: string }[]> = {
@@ -279,40 +280,42 @@ const Lightbox = ({ img, title, onClose }: { img: string; title: string; onClose
   );
 };
 
-// ─── IMAGE GRID with See More + Lightbox + Auto Shuffle ───────
-const ImageGrid = ({ items }: { items: { id: string; title: string; img: string; category?: string; brand?: string }[] }) => {
+// ─── IMAGE GRID with See More + Lightbox ──────────────────────
+// shuffleOnChange=true → re-shuffles when items change (category tab switch)
+// shuffleOnChange=false → stable order (brand section)
+const ImageGrid = ({
+  items,
+  shuffleOnChange = false,
+}: {
+  items: { id: string; title: string; img: string; category?: string; brand?: string }[];
+  shuffleOnChange?: boolean;
+}) => {
   const [visible, setVisible] = useState(8);
   const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
-  const [displayedItems, setDisplayedItems] = useState(() => shuffle(items));
+  const [displayedItems, setDisplayedItems] = useState(() =>
+    shuffleOnChange ? shuffle(items) : items
+  );
 
-  // Auto-shuffle every 4 seconds
+  // When category tab changes → reshuffle + reset visible count
   useEffect(() => {
-    const interval = setInterval(() => {
-      setDisplayedItems(prev => shuffle([...prev]));
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Reset when items change (category switch)
-  useEffect(() => {
-    setDisplayedItems(shuffle(items));
+    setDisplayedItems(shuffleOnChange ? shuffle(items) : items);
     setVisible(8);
-  }, [items]);
+  }, [items, shuffleOnChange]);
 
   return (
     <>
       {lightbox && <Lightbox img={lightbox.img} title={lightbox.title} onClose={() => setLightbox(null)} />}
 
       <motion.div layout className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-        <AnimatePresence>
+        <AnimatePresence initial={false}>
           {displayedItems.slice(0, visible).map((item, index) => (
             <motion.div
               key={item.id}
               layout
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ delay: Math.min(index * 0.03, 0.3) }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.35, delay: Math.min(index * 0.04, 0.3) }}
               onClick={() => setLightbox({ img: item.img, title: item.title })}
               className="group relative overflow-hidden rounded-2xl bg-primary border border-white/5 hover:neon-border cursor-pointer break-inside-avoid mb-6"
             >
@@ -655,7 +658,7 @@ export default function App() {
                   </p>
                 </div>
 
-                <ImageGrid key={activeCategory} items={filtered} />
+                <ImageGrid key={activeCategory} items={filtered} shuffleOnChange={true} />
               </motion.div>
             ) : (
               <motion.div
