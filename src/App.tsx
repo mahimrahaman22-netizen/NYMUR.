@@ -27,7 +27,7 @@ import {
 // ─── CATEGORIES (removed "All") ───────────────────────────────
 const CATEGORIES = [
   "Social Media Post",
-  "Carousel Post",
+  "Facebook Carousel Ads",
   "Print Item",
   "Branding",
   "AI Food Photography",
@@ -36,15 +36,19 @@ const CATEGORIES = [
 
 // ─── BRANDS ───────────────────────────────────────────────────
 const BRANDS = [
-  { id: "monno", name: "Monno", color: "#00C9FF" },
-  { id: "wokwot", name: "Wokwot", color: "#FF6B35" },
-  { id: "soojuicy", name: "Soo Juicy", color: "#FF3CAC" },
-  { id: "kebab", name: "Kebab N Curries", color: "#F9A825" },
-  { id: "secondcup", name: "Second Cup", color: "#6D4C41" },
-  { id: "indulge", name: "Indulge", color: "#D57E80" },
-  { id: "coffeelime", name: "Coffeelime", color: "#76FF03" },
-  { id: "utshob", name: "Utshob Sweets", color: "#FF80AB" },
-  { id: "other", name: "Other Works", color: "#78909C" },
+  { id: "monno",       name: "Monno Ceramic",        color: "#00C9FF" },
+  { id: "secondcup",  name: "Second Cup",            color: "#6D4C41" },
+  { id: "acineem",    name: "ACI Neem",              color: "#76FF03" },
+  { id: "indulge",    name: "Indulge",               color: "#D57E80" },
+  { id: "easternagro",name: "Eastern Agro",          color: "#F9A825" },
+  { id: "wellness",   name: "Wellness Cafe",         color: "#00E5FF" },
+  { id: "coffeelime", name: "Coffeelime & Bubbletime", color: "#FFEA00" },
+  { id: "soojuicy",   name: "So Juicy",              color: "#FF3CAC" },
+  { id: "route66",    name: "Route 66",              color: "#FF6B35" },
+  { id: "alfredough", name: "Alfredough",            color: "#E040FB" },
+  { id: "upstairs",   name: "Upstairs",              color: "#40C4FF" },
+  { id: "punjab",     name: "Punjab Kitchen",        color: "#FF6E40" },
+  { id: "other",      name: "Other",                 color: "#78909C" },
 ];
 
 function makePlaceholders(category: string, count: number, seed: string) {
@@ -75,102 +79,339 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-// Social Media Post — real Monno images (same 35, no duplicates)
-const monnoAsSocialMedia = [
-  { id: "smp-1",  title: "Monno Design 1",  category: "Social Media Post", img: "https://i.imgur.com/9QsN7zu.jpeg" },
-  { id: "smp-2",  title: "Monno Design 2",  category: "Social Media Post", img: "https://i.imgur.com/hEBD40J.jpeg" },
-  { id: "smp-3",  title: "Monno Design 3",  category: "Social Media Post", img: "https://i.imgur.com/AeBOOOI.jpeg" },
-  { id: "smp-4",  title: "Monno Design 4",  category: "Social Media Post", img: "https://i.imgur.com/h68CsP5.jpeg" },
-  { id: "smp-5",  title: "Monno Design 5",  category: "Social Media Post", img: "https://i.imgur.com/h4cXyTL.jpeg" },
-  { id: "smp-6",  title: "Monno Design 6",  category: "Social Media Post", img: "https://i.imgur.com/eWHynVz.jpeg" },
-  { id: "smp-7",  title: "Monno Design 7",  category: "Social Media Post", img: "https://i.imgur.com/ZUjBSYt.jpeg" },
-  { id: "smp-8",  title: "Monno Design 8",  category: "Social Media Post", img: "https://i.imgur.com/VaCiAM3.jpeg" },
-  { id: "smp-9",  title: "Monno Design 9",  category: "Social Media Post", img: "https://i.imgur.com/5spgvES.jpeg" },
-  { id: "smp-10", title: "Monno Design 10", category: "Social Media Post", img: "https://i.imgur.com/3WHBsLk.jpeg" },
-  { id: "smp-11", title: "Monno Design 11", category: "Social Media Post", img: "https://i.imgur.com/Vq0tPwB.jpeg" },
-  { id: "smp-12", title: "Monno Design 12", category: "Social Media Post", img: "https://i.imgur.com/gfJwJdG.jpeg" },
-  { id: "smp-13", title: "Monno Design 13", category: "Social Media Post", img: "https://i.imgur.com/E6bZzL7.jpeg" },
-  { id: "smp-14", title: "Monno Design 14", category: "Social Media Post", img: "https://i.imgur.com/CaxbxaH.jpeg" },
-  { id: "smp-15", title: "Monno Design 15", category: "Social Media Post", img: "https://i.imgur.com/biOXwdw.jpeg" },
-  { id: "smp-16", title: "Monno Design 16", category: "Social Media Post", img: "https://i.imgur.com/y4y5BF2.jpeg" },
-  { id: "smp-17", title: "Monno Design 17", category: "Social Media Post", img: "https://i.imgur.com/3TYuQdP.jpeg" },
-  { id: "smp-18", title: "Monno Design 18", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczO0EVQTFAtsMZcbBYPN26U9VCTeMmNb4noLY7DhrBn1r8HoN9U119N6hWCl3FPmcaT4YbSawnJW6FlSV9Ps3aqja0CFGDHuWDelXdP-4Q_sbCh4ht8=w1280-no" },
-  { id: "smp-19", title: "Monno Design 19", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczMCVorKHhrKzwaHC0XZhA1lyus358wk3JZxHzPZO3beGvStkYNDjR6AQIZbsyvufjmRexwaokWhmZ4-0JTlLbMsacgP1qBYHSvwXA-iN1hAu6eV8VY=w1280-no" },
-  { id: "smp-20", title: "Monno Design 20", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczOow7ZfYXjis5JM_a9NY7aJh2So9AHK0xCiv5SBJbbUd33WHWg4r9jMAOZ2v2TSFW8DuLih03QEzNA8AbssXILcgwON_15eFUfMIZIKfI0SZw3uhCo=w1280-no" },
-  { id: "smp-21", title: "Monno Design 21", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNfA6yI_3vbBbrtn16aJJ45Vf9285nwMxAyk8hPXPd2HFY32CCQHNg97Ig5fCLRGUzTAlOy_fvyQdr0kBAp0MN9R0VSxGN6Mrt7Xw947Fq1GU8A7jA=w1280-no" },
-  { id: "smp-22", title: "Monno Design 22", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczPhmZd7mlCPYulC4EHCuO9bKCYLdew0JxdO-cr3i-T96qf5KMrqDXI7JaUTM4hxXXsWg4k7UXXEC96_RyUxRUqddtEBdTk1n9zoJd2Fvwto49BITrY=w1280-no" },
-  { id: "smp-23", title: "Monno Design 23", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNKz7vznS5Lt5f-XsTMT4LmTEz9Z5CbpZYFby5lOEw628DRp71o9xEY0SveFRK9GIH8a6iKPdr_9zwYZ-ZrTYT1bkZrrlwmqOfQZ1MSATpuE8kMOlQ=w1280-no" },
-  { id: "smp-24", title: "Monno Design 24", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNAB2I3Zu0CH7emHt8CTGhQ28OhuViZmWBE_v6s7637ormpYpW4d8YKVCk7JYP0ajJdIXzyjb5k6ouk5mqiA9C0GvZ5PbUZB0Z71GYOIMvbyIloAaY=w1280-no" },
-  { id: "smp-25", title: "Monno Design 25", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczO661Z9chpTi2G5jPsLpLVFMkGJPN97JXcHp5r27kIog0ah0Rj31Mijxt10zLQNUhRciptX7myNc1yJR5jA97aXERshpsdSTZL6w1uuvwwBdamai78=w1280-no" },
-  { id: "smp-26", title: "Monno Design 26", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczOnUvVMWbmtxXeN1z35flImwWyoeydVRFA7BvIPVcxAr9MaIlGvPZvgKbulKVopkPTrU9gwvoAOi7acITalcbi6wkb5WGNLJD1QyVYFqRNsw90Wv34=w1280-no" },
-  { id: "smp-27", title: "Monno Design 27", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczPxbQLd18H1ASYyr_TkqyFbLsApbTHs1eS8f_U0YnqGvkKurvd4o5xXBlBJha-Kok7rwTLp4yuXnLkmYpztobDAyrq3fqgYp3s3XI6lMSOYmy-lVS4=w1280-no" },
-  { id: "smp-28", title: "Monno Design 28", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczOaRybBLKkiKV8ZzXz_RvPEPKLK1-tzqq_PRf3lO-cEdDNEzBG-_cwW2Vq5c4tpsOvN-D-wVk-meC_UcCn12JtAGdlwYeO7KO4YnTnr_kAWcO8pJEI=w1280-no" },
-  { id: "smp-29", title: "Monno Design 29", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczPiJK83Kyl9WAVGx159VaLmjSNaDTVzcHzbPGJheA7HODI-JJkYQtgOHSYJBnXpl-jDQtYRSf5pfg2QePofEPVl1eVjg5F4RElVjaigieuwOUHteKQ=w1280-no" },
-  { id: "smp-30", title: "Monno Design 30", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNcIJ170FHA_v4xp3JkWJ-dw1DIo6F14DzWK9LiqV8lEjklXbvoMNhMfBEC42h1dzotB9xJjVWrVDDEjCOTSo1S70OFbpGPXcABjAhL8EjsIRZ5eM8=w1280-no" },
-  { id: "smp-31", title: "Monno Design 31", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczPMRPHn1kUI52355PoUs-Gfd_8cXLQMVzk5iwR1Vr7HfEpXofryKeJGI5yJwW3aHKPwJf5AKNO8nhuQ9OldGX5otc7rsIc9DmgbGex-hXmpf4gEHoY=w1280-no" },
-  { id: "smp-32", title: "Monno Design 32", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczO2_4xRcu7aLoXaXbTEsSNn67Vv3jaoAivCVcm2mzJDIxK-r75DgBq8j0SNMye2Fq22xI0OWmbJXfbeTLFaUhOP6qc8lBPSmsU_fqLE1VSCsnr8nBs=w1280-no" },
-  { id: "smp-33", title: "Monno Design 33", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczMj61gHb3umRdEgqK4yf8fHPjGSeEZt-Gn7GhSGhrGEi--1jb1CozoxfHn5mMAPjFj7mR9Vp8Pj07rrLSWzAlX4-OzSkPOWf32iuNt1oM2BZQ_lN8g=w1280-no" },
-  { id: "smp-34", title: "Monno Design 34", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczN0xu6Ds5fxlZbG3mzqp3dDLuz6Oic0iP9MY0rgYF0mFetsHFijUKFaD7X6gPYMOKhSSprRdFAB9Qin663NKqLpXfJ9V57w_GvyqrNNYNHb7YUv5w0=w1280-no" },
-  { id: "smp-35", title: "Monno Design 35", category: "Social Media Post", img: "https://lh3.googleusercontent.com/pw/AP1GczNpdEcIqNGMvXaojj-GKoIKMSvMc-0rGaW1pOtcTiL7H5XVVD2CaWhFI2rR4d1HUo8aWj0Tpafk4wduHYho00fYmNyfil8coqGFc11PX0s6Pp31vVU=w1280-no" },
+// Social Media Post — 30 real images in order (001→030)
+const socialMediaItems = [
+  { id:"smp-1",  title:"Social Media Post 001", category:"Social Media Post", img: gp("AP1GczNWwhLpI-e8z0Qx7Gqe25rzvpHDPaDfHdCKdwgT") },
+  { id:"smp-2",  title:"Social Media Post 002", category:"Social Media Post", img: gp("AP1GczOW2FPlL0kiTmsHHWGa_U4Min5h2olQGHNGR7T4") },
+  { id:"smp-3",  title:"Social Media Post 003", category:"Social Media Post", img: gp("AP1GczOP3Y8zdX7gwO3COeBpxatiD64bK_mwhWPyglkN") },
+  { id:"smp-4",  title:"Social Media Post 004", category:"Social Media Post", img: gp("AP1GczPx7OwqMdnTWqo9BJcqBSjsRaSBE-UMRsJ2byBp") },
+  { id:"smp-5",  title:"Social Media Post 005", category:"Social Media Post", img: gp("AP1GczPsCv73ozb5qTv0zWbhJb_p9O4gqCNr58_9dwDn") },
+  { id:"smp-6",  title:"Social Media Post 006", category:"Social Media Post", img: gp("AP1GczNVWQex9kymT9I_HuvR1H2aScmbwLgmpPlV7HVN") },
+  { id:"smp-7",  title:"Social Media Post 007", category:"Social Media Post", img: gp("AP1GczOt8NyPU_vLvSkU73uwV88IGkWWwYQyrdJhkQgf") },
+  { id:"smp-8",  title:"Social Media Post 008", category:"Social Media Post", img: gp("AP1GczPh5Zs04GXx1B7bpw5OY1fP6XlMAiGLqogv-nNz") },
+  { id:"smp-9",  title:"Social Media Post 009", category:"Social Media Post", img: gp("AP1GczNkyXdTBRTCM-gPExxZESu8ElurfnrzZhOr1BEL") },
+  { id:"smp-10", title:"Social Media Post 010", category:"Social Media Post", img: gp("AP1GczOe6DKHP4AJHqtei1zPxJDSUI515PpiOgQXq_39") },
+  { id:"smp-11", title:"Social Media Post 011", category:"Social Media Post", img: gp("AP1GczN37ePgyDxzshIb-iTqWuTFzOFSuNYShVWWcGIG") },
+  { id:"smp-12", title:"Social Media Post 012", category:"Social Media Post", img: gp("AP1GczNKyK7gmeqByunqzZzFHa-PjPfHSMTXUq0jbzpX") },
+  { id:"smp-13", title:"Social Media Post 013", category:"Social Media Post", img: gp("AP1GczN_WbvhrBizKSXff3vvdGuj9NXlGgfRHAxqRzdT") },
+  { id:"smp-14", title:"Social Media Post 014", category:"Social Media Post", img: gp("AP1GczP9UnzHd2_6cgycnKRL27YSSgJRpAHmXZl-HvdN") },
+  { id:"smp-15", title:"Social Media Post 015", category:"Social Media Post", img: gp("AP1GczOeRIU_NkYHK93ZSaSplGt4r4mivbmrm1UGcSOa") },
+  { id:"smp-16", title:"Social Media Post 016", category:"Social Media Post", img: gp("AP1GczM3z1BcVjlL1PKYA6YLddMwujEkLVX3q5sL4T8t") },
+  { id:"smp-17", title:"Social Media Post 017", category:"Social Media Post", img: gp("AP1GczOWedPXW5PnrHMWlakyYLgK6zk1eVycmOXNwQZ9") },
+  { id:"smp-18", title:"Social Media Post 018", category:"Social Media Post", img: gp("AP1GczOVJ2CkBkXbqC1WMXhtVnafgc8yqS9PWsEbMlRb") },
+  { id:"smp-19", title:"Social Media Post 019", category:"Social Media Post", img: gp("AP1GczM9W_RQJqgX-vaZ0MrQZYgZGAHPmwUfFjUdq3gM") },
+  { id:"smp-20", title:"Social Media Post 020", category:"Social Media Post", img: gp("AP1GczMVIIYsFo0aDrXhNA9_2flmjfLKo03rCB3zxHgh") },
+  { id:"smp-21", title:"Social Media Post 021", category:"Social Media Post", img: gp("AP1GczP5__ZYZQhtSitCIC9rz_nFix6IOcs7C02RTezU") },
+  { id:"smp-22", title:"Social Media Post 022", category:"Social Media Post", img: gp("AP1GczP-T4rnWzPOvBku666OEPGQSlaqJeoJBESVk-AD") },
+  { id:"smp-23", title:"Social Media Post 023", category:"Social Media Post", img: gp("AP1GczMt7aMzs3VXAQ5kh_j0-BQAJYJLta2Vacz8McX_") },
+  { id:"smp-24", title:"Social Media Post 024", category:"Social Media Post", img: gp("AP1GczOPJQuw9kI7-_c19YJ7ox6vDvky5vslKdyNL2oa") },
+  { id:"smp-25", title:"Social Media Post 025", category:"Social Media Post", img: gp("AP1GczNIgDEOxD2TwanRfsaGC5wrHIGhgffM1zpfiXbR") },
+  { id:"smp-26", title:"Social Media Post 026", category:"Social Media Post", img: gp("AP1GczPHA6Yn3im5iHMfKBVIHv8iVl7Pblo98pY6BENI") },
+  { id:"smp-27", title:"Social Media Post 027", category:"Social Media Post", img: gp("AP1GczPzHowi5pHa_jJbkOP4uBuZsHSqSuZ2GjGdPFnU") },
+  { id:"smp-28", title:"Social Media Post 028", category:"Social Media Post", img: gp("AP1GczNzHhfBt51WIvSawFU1W42kHEvYShhvhuP32lVy") },
+  { id:"smp-29", title:"Social Media Post 029", category:"Social Media Post", img: gp("AP1GczMPmB1o3JtiMeXW0P9kV6ve_jRvBibook690ypY") },
+  { id:"smp-30", title:"Social Media Post 030", category:"Social Media Post", img: gp("AP1GczO3TUEj8csH70DmsXZoEAylA9_G0MXpSbF9hTHz") },
 ];
 
-// portfolioItems — Social Media Post gets real images, rest stay as placeholders
-// shuffle() runs once at page load — stable until reload or tab switch
+// Facebook Carousel Ads — 17 real images
+const carouselItems = [
+  { id:"ca-1",  title:"Facebook Carousel Ad 1",  category:"Facebook Carousel Ads", img: gp("AP1GczPt-eV5y8SFDUtTyPGmqG7yqkx7dFcuZJbzqcfd") },
+  { id:"ca-2",  title:"Facebook Carousel Ad 2",  category:"Facebook Carousel Ads", img: gp("AP1GczNZGA9y_9eSiLzLB2LY99k8KOQ4fcyD0qIrbOsC") },
+  { id:"ca-3",  title:"Facebook Carousel Ad 3",  category:"Facebook Carousel Ads", img: gp("AP1GczMmuxyx9eNBheDBK6ZqSkWxM9t3R0jcwP5bwZlW") },
+  { id:"ca-4",  title:"Facebook Carousel Ad 4",  category:"Facebook Carousel Ads", img: gp("AP1GczMqPyAaF2QLrAWzb-EtwX0Eghxvv2P-1MALZAvV") },
+  { id:"ca-5",  title:"Facebook Carousel Ad 5",  category:"Facebook Carousel Ads", img: gp("AP1GczMmuHOznWq88Zq42F0cBrwN_BV7l-00j4K7Z1w_") },
+  { id:"ca-6",  title:"Facebook Carousel Ad 6",  category:"Facebook Carousel Ads", img: gp("AP1GczO4XUkWOZqwKgiw-pnaC9_VZ6w1Csq_AudhZDuC") },
+  { id:"ca-7",  title:"Facebook Carousel Ad 7",  category:"Facebook Carousel Ads", img: gp("AP1GczN1PxB5UXGgcLRcdreu7bCR4HcQXAacNvdlKXt6") },
+  { id:"ca-8",  title:"Facebook Carousel Ad 8",  category:"Facebook Carousel Ads", img: gp("AP1GczNsagil6-pcwVxqhpe1H7Pc8bva3NJzMBapN1PX") },
+  { id:"ca-9",  title:"Facebook Carousel Ad 9",  category:"Facebook Carousel Ads", img: gp("AP1GczM6-XFK4tRlh1_-_TWFJqcjKw62y2rnA3qWU9FC") },
+  { id:"ca-10", title:"Facebook Carousel Ad 10", category:"Facebook Carousel Ads", img: gp("AP1GczPpIRheaJmR5BrWEtdOR9ONE8XjyCEsxHCHzfsK") },
+  { id:"ca-11", title:"Facebook Carousel Ad 11", category:"Facebook Carousel Ads", img: gp("AP1GczPmjojpaIsuRqNygr0I4winjzP721BONjBP3TUd") },
+  { id:"ca-12", title:"Facebook Carousel Ad 12", category:"Facebook Carousel Ads", img: gp("AP1GczNJdhe-1DwgHY0q90iaXgVw8N7AOjGVMtGdZASf") },
+  { id:"ca-13", title:"Facebook Carousel Ad 13", category:"Facebook Carousel Ads", img: gp("AP1GczMYmeux5ETEHdLQlCNDzw5ISVX7SyLqgI_RoMta") },
+  { id:"ca-14", title:"Facebook Carousel Ad 14", category:"Facebook Carousel Ads", img: gp("AP1GczMPuYpaXZfepitSed_yaUUDflw7mr58Kup0VLQy") },
+  { id:"ca-15", title:"Facebook Carousel Ad 15", category:"Facebook Carousel Ads", img: gp("AP1GczMS9RslrkvcdgzlEypSUakgkHMF1fCpZ8VghoPh") },
+  { id:"ca-16", title:"Facebook Carousel Ad 16", category:"Facebook Carousel Ads", img: gp("AP1GczO63vUN4EQcScySNDYnNtl8gph7inqS3NRwB7Bb") },
+  { id:"ca-17", title:"Facebook Carousel Ad 17", category:"Facebook Carousel Ads", img: gp("AP1GczOlj0ftVWu3goEnFPKPHoz1HTGMWNgBI1g_MjWQ") },
+];
+
 const portfolioItems = [
-  ...shuffle(monnoAsSocialMedia),
-  ...makePlaceholders("Carousel Post", 20, "crp"),
+  ...socialMediaItems,
+  ...carouselItems,
   ...makePlaceholders("Print Item", 20, "prt"),
   ...makePlaceholders("Branding", 20, "brd"),
   ...makePlaceholders("AI Food Photography", 20, "afp"),
   ...makePlaceholders("Edited Image (Before/After)", 20, "eba"),
 ];
 
+// Helper to build a Google Photos direct URL from photo ID
+const gp = (id: string) => `https://lh3.googleusercontent.com/pw/${id}=w800-no`;
+
 const brandItems: Record<string, { id: string; title: string; brand: string; img: string }[]> = {
+  // 1. Monno Ceramic — 18 photos from album NXFvkAt9J5tb3gxDA
   monno: [
-    { id: "monno-1",  title: "Monno Design 1",  brand: "monno", img: "https://i.imgur.com/9QsN7zu.jpeg" },
-    { id: "monno-2",  title: "Monno Design 2",  brand: "monno", img: "https://i.imgur.com/hEBD40J.jpeg" },
-    { id: "monno-3",  title: "Monno Design 3",  brand: "monno", img: "https://i.imgur.com/AeBOOOI.jpeg" },
-    { id: "monno-4",  title: "Monno Design 4",  brand: "monno", img: "https://i.imgur.com/h68CsP5.jpeg" },
-    { id: "monno-5",  title: "Monno Design 5",  brand: "monno", img: "https://i.imgur.com/h4cXyTL.jpeg" },
-    { id: "monno-6",  title: "Monno Design 6",  brand: "monno", img: "https://i.imgur.com/eWHynVz.jpeg" },
-    { id: "monno-7",  title: "Monno Design 7",  brand: "monno", img: "https://i.imgur.com/ZUjBSYt.jpeg" },
-    { id: "monno-8",  title: "Monno Design 8",  brand: "monno", img: "https://i.imgur.com/VaCiAM3.jpeg" },
-    { id: "monno-9",  title: "Monno Design 9",  brand: "monno", img: "https://i.imgur.com/5spgvES.jpeg" },
-    { id: "monno-10", title: "Monno Design 10", brand: "monno", img: "https://i.imgur.com/3WHBsLk.jpeg" },
-    { id: "monno-11", title: "Monno Design 11", brand: "monno", img: "https://i.imgur.com/Vq0tPwB.jpeg" },
-    { id: "monno-12", title: "Monno Design 12", brand: "monno", img: "https://i.imgur.com/gfJwJdG.jpeg" },
-    { id: "monno-13", title: "Monno Design 13", brand: "monno", img: "https://i.imgur.com/E6bZzL7.jpeg" },
-    { id: "monno-14", title: "Monno Design 14", brand: "monno", img: "https://i.imgur.com/CaxbxaH.jpeg" },
-    { id: "monno-15", title: "Monno Design 15", brand: "monno", img: "https://i.imgur.com/biOXwdw.jpeg" },
-    { id: "monno-16", title: "Monno Design 16", brand: "monno", img: "https://i.imgur.com/y4y5BF2.jpeg" },
-    { id: "monno-17", title: "Monno Design 17", brand: "monno", img: "https://i.imgur.com/3TYuQdP.jpeg" },
-    { id: "monno-18", title: "Monno Design 18", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczO0EVQTFAtsMZcbBYPN26U9VCTeMmNb4noLY7DhrBn1r8HoN9U119N6hWCl3FPmcaT4YbSawnJW6FlSV9Ps3aqja0CFGDHuWDelXdP-4Q_sbCh4ht8=w1280-no" },
-    { id: "monno-19", title: "Monno Design 19", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczMCVorKHhrKzwaHC0XZhA1lyus358wk3JZxHzPZO3beGvStkYNDjR6AQIZbsyvufjmRexwaokWhmZ4-0JTlLbMsacgP1qBYHSvwXA-iN1hAu6eV8VY=w1280-no" },
-    { id: "monno-20", title: "Monno Design 20", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczOow7ZfYXjis5JM_a9NY7aJh2So9AHK0xCiv5SBJbbUd33WHWg4r9jMAOZ2v2TSFW8DuLih03QEzNA8AbssXILcgwON_15eFUfMIZIKfI0SZw3uhCo=w1280-no" },
-    { id: "monno-21", title: "Monno Design 21", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczNfA6yI_3vbBbrtn16aJJ45Vf9285nwMxAyk8hPXPd2HFY32CCQHNg97Ig5fCLRGUzTAlOy_fvyQdr0kBAp0MN9R0VSxGN6Mrt7Xw947Fq1GU8A7jA=w1280-no" },
-    { id: "monno-22", title: "Monno Design 22", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczPhmZd7mlCPYulC4EHCuO9bKCYLdew0JxdO-cr3i-T96qf5KMrqDXI7JaUTM4hxXXsWg4k7UXXEC96_RyUxRUqddtEBdTk1n9zoJd2Fvwto49BITrY=w1280-no" },
-    { id: "monno-23", title: "Monno Design 23", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczNKz7vznS5Lt5f-XsTMT4LmTEz9Z5CbpZYFby5lOEw628DRp71o9xEY0SveFRK9GIH8a6iKPdr_9zwYZ-ZrTYT1bkZrrlwmqOfQZ1MSATpuE8kMOlQ=w1280-no" },
-    { id: "monno-24", title: "Monno Design 24", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczNAB2I3Zu0CH7emHt8CTGhQ28OhuViZmWBE_v6s7637ormpYpW4d8YKVCk7JYP0ajJdIXzyjb5k6ouk5mqiA9C0GvZ5PbUZB0Z71GYOIMvbyIloAaY=w1280-no" },
-    { id: "monno-25", title: "Monno Design 25", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczO661Z9chpTi2G5jPsLpLVFMkGJPN97JXcHp5r27kIog0ah0Rj31Mijxt10zLQNUhRciptX7myNc1yJR5jA97aXERshpsdSTZL6w1uuvwwBdamai78=w1280-no" },
-    { id: "monno-26", title: "Monno Design 26", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczOnUvVMWbmtxXeN1z35flImwWyoeydVRFA7BvIPVcxAr9MaIlGvPZvgKbulKVopkPTrU9gwvoAOi7acITalcbi6wkb5WGNLJD1QyVYFqRNsw90Wv34=w1280-no" },
-    { id: "monno-27", title: "Monno Design 27", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczPxbQLd18H1ASYyr_TkqyFbLsApbTHs1eS8f_U0YnqGvkKurvd4o5xXBlBJha-Kok7rwTLp4yuXnLkmYpztobDAyrq3fqgYp3s3XI6lMSOYmy-lVS4=w1280-no" },
-    { id: "monno-28", title: "Monno Design 28", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczOaRybBLKkiKV8ZzXz_RvPEPKLK1-tzqq_PRf3lO-cEdDNEzBG-_cwW2Vq5c4tpsOvN-D-wVk-meC_UcCn12JtAGdlwYeO7KO4YnTnr_kAWcO8pJEI=w1280-no" },
-    { id: "monno-29", title: "Monno Design 29", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczPiJK83Kyl9WAVGx159VaLmjSNaDTVzcHzbPGJheA7HODI-JJkYQtgOHSYJBnXpl-jDQtYRSf5pfg2QePofEPVl1eVjg5F4RElVjaigieuwOUHteKQ=w1280-no" },
-    { id: "monno-30", title: "Monno Design 30", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczNcIJ170FHA_v4xp3JkWJ-dw1DIo6F14DzWK9LiqV8lEjklXbvoMNhMfBEC42h1dzotB9xJjVWrVDDEjCOTSo1S70OFbpGPXcABjAhL8EjsIRZ5eM8=w1280-no" },
-    { id: "monno-31", title: "Monno Design 31", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczPMRPHn1kUI52355PoUs-Gfd_8cXLQMVzk5iwR1Vr7HfEpXofryKeJGI5yJwW3aHKPwJf5AKNO8nhuQ9OldGX5otc7rsIc9DmgbGex-hXmpf4gEHoY=w1280-no" },
-    { id: "monno-32", title: "Monno Design 32", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczO2_4xRcu7aLoXaXbTEsSNn67Vv3jaoAivCVcm2mzJDIxK-r75DgBq8j0SNMye2Fq22xI0OWmbJXfbeTLFaUhOP6qc8lBPSmsU_fqLE1VSCsnr8nBs=w1280-no" },
-    { id: "monno-33", title: "Monno Design 33", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczMj61gHb3umRdEgqK4yf8fHPjGSeEZt-Gn7GhSGhrGEi--1jb1CozoxfHn5mMAPjFj7mR9Vp8Pj07rrLSWzAlX4-OzSkPOWf32iuNt1oM2BZQ_lN8g=w1280-no" },
-    { id: "monno-34", title: "Monno Design 34", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczN0xu6Ds5fxlZbG3mzqp3dDLuz6Oic0iP9MY0rgYF0mFetsHFijUKFaD7X6gPYMOKhSSprRdFAB9Qin663NKqLpXfJ9V57w_GvyqrNNYNHb7YUv5w0=w1280-no" },
-    { id: "monno-35", title: "Monno Design 35", brand: "monno", img: "https://lh3.googleusercontent.com/pw/AP1GczNpdEcIqNGMvXaojj-GKoIKMSvMc-0rGaW1pOtcTiL7H5XVVD2CaWhFI2rR4d1HUo8aWj0Tpafk4wduHYho00fYmNyfil8coqGFc11PX0s6Pp31vVU=w1280-no" },
+    { id:"mc-1",  title:"Monno Ceramic 1",  brand:"monno", img: gp("AP1GczNUe-VypJohODO7nqk-j_pxmUUM94USP0nuxpVH") },
+    { id:"mc-2",  title:"Monno Ceramic 2",  brand:"monno", img: gp("AP1GczO6CiRHuLir9H_Ti9LENledAx9foTm3lJqqwv1T") },
+    { id:"mc-3",  title:"Monno Ceramic 3",  brand:"monno", img: gp("AP1GczNk6XYYpC5-RCHaIidUaN4HHwCV0nJSb0yJdYWV") },
+    { id:"mc-4",  title:"Monno Ceramic 4",  brand:"monno", img: gp("AP1GczOYb3dgEDdJiRxURqk79cRkTvLbViHijMhlfXwD") },
+    { id:"mc-5",  title:"Monno Ceramic 5",  brand:"monno", img: gp("AP1GczP70LC8WCm-RfSMLaEEOYmQdv521LATY1lpFdd6") },
+    { id:"mc-6",  title:"Monno Ceramic 6",  brand:"monno", img: gp("AP1GczNc7479LPv1I877P9gx-LXF3bwKj8hWVUyL9UuV") },
+    { id:"mc-7",  title:"Monno Ceramic 7",  brand:"monno", img: gp("AP1GczOe9MfaC9WIJ8JULzJ3UdUE68bPHD4gjAGvgGDc") },
+    { id:"mc-8",  title:"Monno Ceramic 8",  brand:"monno", img: gp("AP1GczNZXLJk1rhz3JLgg2PMuyln2ME_Xvio0KK6w9K1") },
+    { id:"mc-9",  title:"Monno Ceramic 9",  brand:"monno", img: gp("AP1GczNfTfgp9UrlAvdaKeOHj2uZFaC8LSCiAb3aa634") },
+    { id:"mc-10", title:"Monno Ceramic 10", brand:"monno", img: gp("AP1GczM6QJ6ZrDKTi-mmQ-49H0tRSNSJlWYzUmG93xc_") },
+    { id:"mc-11", title:"Monno Ceramic 11", brand:"monno", img: gp("AP1GczOFNKjDJGAM6S-ToF6vP3YC-zmIlrxB7UssuBmW") },
+    { id:"mc-12", title:"Monno Ceramic 12", brand:"monno", img: gp("AP1GczPzkgdoDD9kE9W1UDp9Sd9Q7Q4mwo4DjydcItDl") },
+    { id:"mc-13", title:"Monno Ceramic 13", brand:"monno", img: gp("AP1GczNq87N15ajZ6qolWi-qBtLoMgfGCOWkmO30F_P0") },
+    { id:"mc-14", title:"Monno Ceramic 14", brand:"monno", img: gp("AP1GczP4-7IAZcdRED88TH8ET87bYg8R_-GkjkrM7sWk") },
+    { id:"mc-15", title:"Monno Ceramic 15", brand:"monno", img: gp("AP1GczNsTuNKDAkM9yvlA44YgGBIYpnxYO_Xuzns-sgK") },
+    { id:"mc-16", title:"Monno Ceramic 16", brand:"monno", img: gp("AP1GczNzdErZ80pBJGVznobJSECT0Q4bTllJGl4d39Dc") },
+    { id:"mc-17", title:"Monno Ceramic 17", brand:"monno", img: gp("AP1GczP2Fl1M_CzcX_i-AbtlOI5a1vaHWyeBf5A9KQci") },
+    { id:"mc-18", title:"Monno Ceramic 18", brand:"monno", img: gp("AP1GczMRjNliBjZH-m1NphbQgRkSYpV7z5aVMNSg4_Um") },
   ],
-  wokwot: makeBrandPlaceholders("wokwot", "Wokwot", 20),
-  soojuicy: makeBrandPlaceholders("soojuicy", "Soo Juicy", 20),
-  kebab: makeBrandPlaceholders("kebab", "Kebab N Curries", 20),
-  secondcup: makeBrandPlaceholders("secondcup", "Second Cup", 20),
-  indulge: makeBrandPlaceholders("indulge", "Indulge", 20),
-  coffeelime: makeBrandPlaceholders("coffeelime", "Coffeelime", 20),
-  utshob: makeBrandPlaceholders("utshob", "Utshob Sweets", 20),
-  other: makeBrandPlaceholders("other", "Other Works", 20),
+
+  // 2. Second Cup — 10 photos
+  secondcup: [
+    { id:"sc-1",  title:"Second Cup 1",  brand:"secondcup", img: gp("AP1GczOfxUuX_ehUaeMxLdufXOWPgCa1uJa6yCkVfams") },
+    { id:"sc-2",  title:"Second Cup 2",  brand:"secondcup", img: gp("AP1GczNgHHQs4pUbpNa0xuvNkkNVh4z0l8bCO2UcSDCC") },
+    { id:"sc-3",  title:"Second Cup 3",  brand:"secondcup", img: gp("AP1GczOw8AS4JIdNOzRiQPCVT9SLXXUjI-wC5iIs6ryV") },
+    { id:"sc-4",  title:"Second Cup 4",  brand:"secondcup", img: gp("AP1GczPxiye_-tjwhQlimlWofN2Mg6hcv4x7ytybrDXQ") },
+    { id:"sc-5",  title:"Second Cup 5",  brand:"secondcup", img: gp("AP1GczMrnV7d8Yj3Juny7UDpx-fyuI3VyPGYZ2rFLBn2") },
+    { id:"sc-6",  title:"Second Cup 6",  brand:"secondcup", img: gp("AP1GczMIFhu-JnzqdYW12e0G7wwQeKPOyLdAuxxNeqnC") },
+    { id:"sc-7",  title:"Second Cup 7",  brand:"secondcup", img: gp("AP1GczMR_Q4qhg4gwtJcQFmNvjf6b2pQKgEAwCEIDTlx") },
+    { id:"sc-8",  title:"Second Cup 8",  brand:"secondcup", img: gp("AP1GczO90faR4N4iUKwLTT5dNDDKmfsDP_cJJiSh5ghA") },
+    { id:"sc-9",  title:"Second Cup 9",  brand:"secondcup", img: gp("AP1GczNHTk5N3bkEl8USbSkvaVy7-01a02DqW1fHma0V") },
+    { id:"sc-10", title:"Second Cup 10", brand:"secondcup", img: gp("AP1GczOUCqrRvsjWK6-H-OIDSDSZViyJnJJJYJq-Sxs1") },
+  ],
+
+  // 3. ACI Neem — 22 photos
+  acineem: [
+    { id:"an-1",  title:"ACI Neem 1",  brand:"acineem", img: gp("AP1GczPOTR48CPwDGrKKC_cBOR5okhPPp3zMHJIMyuWI") },
+    { id:"an-2",  title:"ACI Neem 2",  brand:"acineem", img: gp("AP1GczOU9PMHmIX1SXkMk1uJ45_GLfxs8jJhZOpjDFRs") },
+    { id:"an-3",  title:"ACI Neem 3",  brand:"acineem", img: gp("AP1GczNWTMKQKcBIKWMhH7REOZtPKpelOPfN658T_x-i") },
+    { id:"an-4",  title:"ACI Neem 4",  brand:"acineem", img: gp("AP1GczM0ZOQWE3dVSjvdc6OqfjowV21h0xunBJDFMmwo") },
+    { id:"an-5",  title:"ACI Neem 5",  brand:"acineem", img: gp("AP1GczOpTRFqwAuQ5MNtVE2-feWNUvA1H0mLa7vHyZhL") },
+    { id:"an-6",  title:"ACI Neem 6",  brand:"acineem", img: gp("AP1GczMjwbjHjBehtbVnFb37PUzLFJ27iEWdtBMt7mdS") },
+    { id:"an-7",  title:"ACI Neem 7",  brand:"acineem", img: gp("AP1GczMKasPC4W_xQH_hE2Q2PBG5sIeWOCLZE8-Z91VO") },
+    { id:"an-8",  title:"ACI Neem 8",  brand:"acineem", img: gp("AP1GczO60K1TxjWrILZKqyNUrFfAczyY6z3EB6l7gD9P") },
+    { id:"an-9",  title:"ACI Neem 9",  brand:"acineem", img: gp("AP1GczPp8fi5i6HYnVjvTaro3L6DdOreqoX2c9UPf6bq") },
+    { id:"an-10", title:"ACI Neem 10", brand:"acineem", img: gp("AP1GczPm89KHlznPVKnUmWC0NqHf_9nkosYWO_kVmGA-") },
+    { id:"an-11", title:"ACI Neem 11", brand:"acineem", img: gp("AP1GczM0h_74PdO3xe6QCZ1luKrMCVNjj8AUCH0HnYes") },
+    { id:"an-12", title:"ACI Neem 12", brand:"acineem", img: gp("AP1GczPXZNClypahBDYZ5mEpco-OQfV-bHdB-aev3AR6") },
+    { id:"an-13", title:"ACI Neem 13", brand:"acineem", img: gp("AP1GczN17R_qGDy-IO4iMz6bs-BJ74H60gXg-3nXEHFU") },
+    { id:"an-14", title:"ACI Neem 14", brand:"acineem", img: gp("AP1GczNRH40HNtcu2FzQDW-04vublK9OD0nzENU00HZb") },
+    { id:"an-15", title:"ACI Neem 15", brand:"acineem", img: gp("AP1GczOVe33r-dBtPE79am5L6yl1ynISYyOd_0r5ATe9") },
+    { id:"an-16", title:"ACI Neem 16", brand:"acineem", img: gp("AP1GczPhQK5i-6HSq3tnQB4dIFoR2wNegjdZEG3NlZ8O") },
+    { id:"an-17", title:"ACI Neem 17", brand:"acineem", img: gp("AP1GczPGREv3Uv8vv08yyLRXWwnlYLR2YUxgsPNtkf1E") },
+    { id:"an-18", title:"ACI Neem 18", brand:"acineem", img: gp("AP1GczMeDtC335r4aMLyn6kHIlo1N-Xl52xO4Zrwm9G-") },
+    { id:"an-19", title:"ACI Neem 19", brand:"acineem", img: gp("AP1GczPTJ6jfnu2are6_b-PHLkGLOG88ZC_T0B7WFwBa") },
+    { id:"an-20", title:"ACI Neem 20", brand:"acineem", img: gp("AP1GczPg7R-Y8RdnY3qymYoWHsGz3AFrR5f42gINB3bp") },
+    { id:"an-21", title:"ACI Neem 21", brand:"acineem", img: gp("AP1GczOqNoXk85r2kYiN8eulx9fh-fyZ1GJk9v97ul7a") },
+    { id:"an-22", title:"ACI Neem 22", brand:"acineem", img: gp("AP1GczMWoSiMjo2xvWV8HwJ3vJNGjC57ZWQkjgJVFV8Q") },
+  ],
+
+  // 4. Indulge — 24 photos
+  indulge: [
+    { id:"in-1",  title:"Indulge 1",  brand:"indulge", img: gp("AP1GczP75J2YFFvrCcIrOK6bZfBzlGhchxelFev2K_4S") },
+    { id:"in-2",  title:"Indulge 2",  brand:"indulge", img: gp("AP1GczOoQaGzvK_RU571aAFI7F00j1jfohVMprlT_F_Q") },
+    { id:"in-3",  title:"Indulge 3",  brand:"indulge", img: gp("AP1GczOoUglTx4H9ImcUQolXZFqdmlMgjDotdBgYGzVy") },
+    { id:"in-4",  title:"Indulge 4",  brand:"indulge", img: gp("AP1GczP0jztN1MMqWYQwQFICHMdhcZTYf7QSbnhIcsPH") },
+    { id:"in-5",  title:"Indulge 5",  brand:"indulge", img: gp("AP1GczNWtKnFd-x5AcFsGJmjvswbiRiL2Te7DMvT-yVo") },
+    { id:"in-6",  title:"Indulge 6",  brand:"indulge", img: gp("AP1GczMir-urHrxttqJ3QPUdPXeM_j-fTzhUxr8oyO7V") },
+    { id:"in-7",  title:"Indulge 7",  brand:"indulge", img: gp("AP1GczOD-C7i9wbo_7stfkP3u7YOHZ-b8RjZCvuiEzju") },
+    { id:"in-8",  title:"Indulge 8",  brand:"indulge", img: gp("AP1GczNKuuSbcCHKkMiyWAQXGZvfiJoCdeQRs3WQ2BoK") },
+    { id:"in-9",  title:"Indulge 9",  brand:"indulge", img: gp("AP1GczONskLI2EYj49XeY11lfHU6NHOilBbIp7qRL1Xt") },
+    { id:"in-10", title:"Indulge 10", brand:"indulge", img: gp("AP1GczO-b9MFGN6EvBwJIRVggWuGjxdXCT-qBbi-A4wp") },
+    { id:"in-11", title:"Indulge 11", brand:"indulge", img: gp("AP1GczNCSW_qBRvo4qNKnIbDc7k7dbOAHUZzowTnznUA") },
+    { id:"in-12", title:"Indulge 12", brand:"indulge", img: gp("AP1GczNQIYMy02jc2MuhVeHmvGaqwoQXDAAdkkopX3qU") },
+    { id:"in-13", title:"Indulge 13", brand:"indulge", img: gp("AP1GczNj3o8TlKk1yBEWTmA_tf1Ay2tCAWl4cIqD49sU") },
+    { id:"in-14", title:"Indulge 14", brand:"indulge", img: gp("AP1GczO-RPmbRyOdy9E897z_pvyZOsxpLznsIaiWRTx9") },
+    { id:"in-15", title:"Indulge 15", brand:"indulge", img: gp("AP1GczNlD4wUrhVersdE_haPTW_UBTZTK1y538wghthg") },
+    { id:"in-16", title:"Indulge 16", brand:"indulge", img: gp("AP1GczPlDpA6gewvQ3_Iv9AxPC3egTDHwhnCNEgIoAnr") },
+    { id:"in-17", title:"Indulge 17", brand:"indulge", img: gp("AP1GczOvFHc3jUrdUc3HHqlegJeBvmFvNXVpBkwsV0-t") },
+    { id:"in-18", title:"Indulge 18", brand:"indulge", img: gp("AP1GczOy7oYJUlyh4mTjWWTHz3xGP4ITv_MhXDXJh3bq") },
+    { id:"in-19", title:"Indulge 19", brand:"indulge", img: gp("AP1GczPwjzeQ94NDWDqjPOzxQXAfAYiYjbnCAKThcpX9") },
+    { id:"in-20", title:"Indulge 20", brand:"indulge", img: gp("AP1GczN1Ig9UKwM0iY-Zy3Z1ZMxY1_UTsAWYQ0E7XoM2") },
+    { id:"in-21", title:"Indulge 21", brand:"indulge", img: gp("AP1GczNidL1upVUKRz5ZOyyszp6PCyT4xQHf2h5OxxgJ") },
+    { id:"in-22", title:"Indulge 22", brand:"indulge", img: gp("AP1GczNuKLawNBAPNybYB-9_cZvz9xTK3090m0bHThCS") },
+    { id:"in-23", title:"Indulge 23", brand:"indulge", img: gp("AP1GczOrCiLs4ZZ4IpElt706xTGi2rqKemKPygAvYOq-") },
+    { id:"in-24", title:"Indulge 24", brand:"indulge", img: gp("AP1GczPdMB6HdZoTqiUF4DYfKddw3d6T4Uik9kXqWCWR") },
+  ],
+
+  // 5. Eastern Agro — 24 photos
+  easternagro: [
+    { id:"ea-1",  title:"Eastern Agro 1",  brand:"easternagro", img: gp("AP1GczO9F4lcocq6APZtNxxgGHkqgDwWZc8WFbkXU4-8") },
+    { id:"ea-2",  title:"Eastern Agro 2",  brand:"easternagro", img: gp("AP1GczMJJErisxgN2uJwwdfz0v48OWDy0QTu1k7Va_-l") },
+    { id:"ea-3",  title:"Eastern Agro 3",  brand:"easternagro", img: gp("AP1GczNML1XC_URPZ8xR49cuB3dXZElwwaBqpg-mWseE") },
+    { id:"ea-4",  title:"Eastern Agro 4",  brand:"easternagro", img: gp("AP1GczP1S33amoeXUPTwuvLxMf9TuZZtCAp1dv6EVVsT") },
+    { id:"ea-5",  title:"Eastern Agro 5",  brand:"easternagro", img: gp("AP1GczM_-pEKTi3LyalFAhRcQTkjeOqScB8uOLsi0m1u") },
+    { id:"ea-6",  title:"Eastern Agro 6",  brand:"easternagro", img: gp("AP1GczNdgkdnqyBlOEwauRAu-k2KFPg2gcELyV8qkJ1F") },
+    { id:"ea-7",  title:"Eastern Agro 7",  brand:"easternagro", img: gp("AP1GczOURSHkOSAeSL6IeVNIBj_2Is-xjibxRlKbK7sT") },
+    { id:"ea-8",  title:"Eastern Agro 8",  brand:"easternagro", img: gp("AP1GczMcvB9DhbaqGPDvSH9e3iiwGi_w4fiJxwRV-y4W") },
+    { id:"ea-9",  title:"Eastern Agro 9",  brand:"easternagro", img: gp("AP1GczPfuWLXAaur0P2Yom08qiZRBGFITAiIpHwJetrF") },
+    { id:"ea-10", title:"Eastern Agro 10", brand:"easternagro", img: gp("AP1GczNXYp221jqVO-2ib3uHlgzY383kQUayC5hIf5Ae") },
+    { id:"ea-11", title:"Eastern Agro 11", brand:"easternagro", img: gp("AP1GczOQ_-sO9MnCWAMIMh6-VpGd9Zc24q1V1MyQzEar") },
+    { id:"ea-12", title:"Eastern Agro 12", brand:"easternagro", img: gp("AP1GczOR13BTLU--tK_DHQL4914ev-Zs9LBwC_IB_WK1") },
+    { id:"ea-13", title:"Eastern Agro 13", brand:"easternagro", img: gp("AP1GczO355oV_rY8c8QqsAUeLDa6FAjuPRoYXqEQ4_4P") },
+    { id:"ea-14", title:"Eastern Agro 14", brand:"easternagro", img: gp("AP1GczOFIqMEZEOEB1enhoHxUYwTvMxLHI5a3uLzEr9P") },
+    { id:"ea-15", title:"Eastern Agro 15", brand:"easternagro", img: gp("AP1GczOOvJWVSmTtKWUFkLAe8ykTaBasHcct8nKPmS4I") },
+    { id:"ea-16", title:"Eastern Agro 16", brand:"easternagro", img: gp("AP1GczMidykYek1wgBo6sYKWnmtsSahgjCoImzhb17iq") },
+    { id:"ea-17", title:"Eastern Agro 17", brand:"easternagro", img: gp("AP1GczP236EYA8poIAHrqJAFjS2wKRz5oVefJwC084yb") },
+    { id:"ea-18", title:"Eastern Agro 18", brand:"easternagro", img: gp("AP1GczN3IoLrR4yPGTyD_vUwgv1OJ_Uy6qxQ_2S-EXO6") },
+    { id:"ea-19", title:"Eastern Agro 19", brand:"easternagro", img: gp("AP1GczPshOJJ-W8wO2gVPHzFqoGyCNxH1uN8RpnXJUHW") },
+    { id:"ea-20", title:"Eastern Agro 20", brand:"easternagro", img: gp("AP1GczMW3jzKrW9UilB5grANA50i3B14AfMi9Qd-XJL7") },
+    { id:"ea-21", title:"Eastern Agro 21", brand:"easternagro", img: gp("AP1GczNt3982j_c_JQPEpSvf9TDjsp3ne7I5G8eFxhNY") },
+    { id:"ea-22", title:"Eastern Agro 22", brand:"easternagro", img: gp("AP1GczPLCaqZyqrbw_85xbkMMIBvotspRfVsNtaYXZeh") },
+    { id:"ea-23", title:"Eastern Agro 23", brand:"easternagro", img: gp("AP1GczNHvh6TDdfKuyLae1gNOV5p8CqI7OQWwjRJZ9NU") },
+    { id:"ea-24", title:"Eastern Agro 24", brand:"easternagro", img: gp("AP1GczM5TXD3WBctTcRKF-ixKW91-SnTe2ovP_rpmMTP") },
+  ],
+
+  // 6. Wellness Cafe — 17 photos
+  wellness: [
+    { id:"wc-1",  title:"Wellness Cafe 1",  brand:"wellness", img: gp("AP1GczMZrxZPOi1S8e4ow5iq6Uul6oUxTmPG_4wN-JWG") },
+    { id:"wc-2",  title:"Wellness Cafe 2",  brand:"wellness", img: gp("AP1GczN-8mDffaupAXkC_OlDpwEC8hIhKqBVB-sTy49m") },
+    { id:"wc-3",  title:"Wellness Cafe 3",  brand:"wellness", img: gp("AP1GczOwz17fGyKHpqzAmmJdbXjA9u-QgkEBWEVBQjaK") },
+    { id:"wc-4",  title:"Wellness Cafe 4",  brand:"wellness", img: gp("AP1GczO2phkMehwazh7Y7ftsDbyxQsRWfaFvCfiT6RRX") },
+    { id:"wc-5",  title:"Wellness Cafe 5",  brand:"wellness", img: gp("AP1GczN2kv8YryALXCmslocQQ1KlkIVxOyXefPy3gwEY") },
+    { id:"wc-6",  title:"Wellness Cafe 6",  brand:"wellness", img: gp("AP1GczPKfzHco_f6W5YC61oLQNRKV5qcqvDfS-8tvTyr") },
+    { id:"wc-7",  title:"Wellness Cafe 7",  brand:"wellness", img: gp("AP1GczOSNFsQndXOZfMoOkykYn4Y505vD0cCvj1U7-aX") },
+    { id:"wc-8",  title:"Wellness Cafe 8",  brand:"wellness", img: gp("AP1GczO5lbwuSe0fpCfdH8CMZ89k85U3hcGVNfOdGAt2") },
+    { id:"wc-9",  title:"Wellness Cafe 9",  brand:"wellness", img: gp("AP1GczPjsYAAKWST-Rbmwrnc4WaPW_KJ8Iuw6VCfODu-") },
+    { id:"wc-10", title:"Wellness Cafe 10", brand:"wellness", img: gp("AP1GczPbTsG9dMDk9BzGLNSfZZ73THmir3-o83KEoSG_") },
+    { id:"wc-11", title:"Wellness Cafe 11", brand:"wellness", img: gp("AP1GczObih50SDTRYcVEn85WI_5ELUa-Y0Ur9eMA2Zkf") },
+    { id:"wc-12", title:"Wellness Cafe 12", brand:"wellness", img: gp("AP1GczMS_ecT-tL_OKj6QUj8kZOfP_mXGU5tdQ91fbRW") },
+    { id:"wc-13", title:"Wellness Cafe 13", brand:"wellness", img: gp("AP1GczNyF5oBhys_VUrIDX1kJOyYkPVWKNSZZ53tAmIj") },
+    { id:"wc-14", title:"Wellness Cafe 14", brand:"wellness", img: gp("AP1GczM8DjqKE3ZKti13xO3aoW36yj1T9eDX2uly7V9b") },
+    { id:"wc-15", title:"Wellness Cafe 15", brand:"wellness", img: gp("AP1GczO5_cCqCWOVtq-ocrjt37NhIhYBez2UD3_cYa7u") },
+    { id:"wc-16", title:"Wellness Cafe 16", brand:"wellness", img: gp("AP1GczPTlOGV26JKOcKxY9yHk3kp3b2qxsLlybBaeGAC") },
+    { id:"wc-17", title:"Wellness Cafe 17", brand:"wellness", img: gp("AP1GczNTG5QL1F10nssl01eUO_DTteerxVZ84biurM4g") },
+  ],
+
+  // 7. Coffeelime & Bubbletime — placeholder (no album link)
+  coffeelime: makeBrandPlaceholders("coffeelime", "Coffeelime & Bubbletime", 10),
+
+  // 8. So Juicy — placeholder (no album link)
+  soojuicy: makeBrandPlaceholders("soojuicy", "So Juicy", 10),
+
+  // 9. Route 66 — 24 photos
+  route66: [
+    { id:"r6-1",  title:"Route 66 1",  brand:"route66", img: gp("AP1GczOxDbxJr2Bh4yhkv-x1o7a6ex7UbVpadEUAjY-J") },
+    { id:"r6-2",  title:"Route 66 2",  brand:"route66", img: gp("AP1GczOqSz06n4MWCMkgZRTidcRsm6jPsVQ7iuSUDNxl") },
+    { id:"r6-3",  title:"Route 66 3",  brand:"route66", img: gp("AP1GczO--o2zt6fMfvkyJA0Lzl5aDyyh_8f2O7VC8-Mz") },
+    { id:"r6-4",  title:"Route 66 4",  brand:"route66", img: gp("AP1GczPH5Id2pD_6BUWotJJdQZ99negpneMW1lvzSby9") },
+    { id:"r6-5",  title:"Route 66 5",  brand:"route66", img: gp("AP1GczNIg7yJwNBIi27NShxhxm_cy4rLFryz4gTTSJWw") },
+    { id:"r6-6",  title:"Route 66 6",  brand:"route66", img: gp("AP1GczPiqiT15oJ0ddafHyCm9ytU7Ddv4OVG70Fog6ZZ") },
+    { id:"r6-7",  title:"Route 66 7",  brand:"route66", img: gp("AP1GczOn9XksKHibDFdE8MR6jMgtg1a2F1c1cuFxdJKE") },
+    { id:"r6-8",  title:"Route 66 8",  brand:"route66", img: gp("AP1GczPBhIYzMizqjyGboW40sJ-sIXsutQyqVvFmwxHg") },
+    { id:"r6-9",  title:"Route 66 9",  brand:"route66", img: gp("AP1GczPpCXbM08ZErzGovqgGhbzX5gcz-PjfMv5dY4fk") },
+    { id:"r6-10", title:"Route 66 10", brand:"route66", img: gp("AP1GczMkHjGZJkuhnpVlRK_-fn9GqULZV3RiS2e65E75") },
+    { id:"r6-11", title:"Route 66 11", brand:"route66", img: gp("AP1GczNK5nondzxDBXOnMPbk00ACMITezTytAuQohwBa") },
+    { id:"r6-12", title:"Route 66 12", brand:"route66", img: gp("AP1GczPrcHG38TH8xOzUMQOjkQN24r3o1AldO2T-e2Dl") },
+    { id:"r6-13", title:"Route 66 13", brand:"route66", img: gp("AP1GczM6hfJi9hrafLFrlefEOB1bBzLYFeOz8sdo2-Dr") },
+    { id:"r6-14", title:"Route 66 14", brand:"route66", img: gp("AP1GczO9xQTkXYL98JFiEaYkygJPg5wGX93FBSz4ewMJ") },
+    { id:"r6-15", title:"Route 66 15", brand:"route66", img: gp("AP1GczMmDmhXFsg-hSpEMkb6_kL4GTzRoTkMknNXYHFA") },
+    { id:"r6-16", title:"Route 66 16", brand:"route66", img: gp("AP1GczNEcFR8Yrlqv2aFUerbIpJac4d2AI6HTDmEr0ga") },
+    { id:"r6-17", title:"Route 66 17", brand:"route66", img: gp("AP1GczNFekd-g0sg6d8cdhcVJBqrhb1zsOYvU0PgbekV") },
+    { id:"r6-18", title:"Route 66 18", brand:"route66", img: gp("AP1GczNVldxG1ZT6eBOjdwX9PN92Oy1jNuD7MaEn7aJX") },
+    { id:"r6-19", title:"Route 66 19", brand:"route66", img: gp("AP1GczMsyausX3tmmKA6a4P856DwIhuXVnF20sIP_cea") },
+    { id:"r6-20", title:"Route 66 20", brand:"route66", img: gp("AP1GczMSfwmBTemiOF0Hhzy9Eq8uz2fs6qwXVBJ-DSqq") },
+    { id:"r6-21", title:"Route 66 21", brand:"route66", img: gp("AP1GczNX7J1gkcjOiQnaNDUEEhYwy8qUMnzFYoC4hWRp") },
+    { id:"r6-22", title:"Route 66 22", brand:"route66", img: gp("AP1GczPOhNUSwBAhh9qxOGvheKa5FUswI7F2hs2ZCRF8") },
+    { id:"r6-23", title:"Route 66 23", brand:"route66", img: gp("AP1GczNmFT7oGmrtT9_Kyws-m304ShXNgLE8-kU9X5Yy") },
+    { id:"r6-24", title:"Route 66 24", brand:"route66", img: gp("AP1GczP8ipOwCmtZEtl3rn-3CxFNiqVqI8M4bBEdMd8I") },
+  ],
+
+  // 10. Alfredough — 18 photos
+  alfredough: [
+    { id:"af-1",  title:"Alfredough 1",  brand:"alfredough", img: gp("AP1GczPgE28GrB6TdKfcc4wQJ8sXGeZbn0DnsMeC8O6g") },
+    { id:"af-2",  title:"Alfredough 2",  brand:"alfredough", img: gp("AP1GczNx9iF2vWjhcwDEV7ziQ8nEcJbxkKdoWLEfI5UB") },
+    { id:"af-3",  title:"Alfredough 3",  brand:"alfredough", img: gp("AP1GczP9mXZA-yhRckjlIRR5kt_-JxBIIGgNJt_DDBqx") },
+    { id:"af-4",  title:"Alfredough 4",  brand:"alfredough", img: gp("AP1GczPgKMAoB-I1OFoNGnkvdGntUZ1FmJcfWblo6Dd_") },
+    { id:"af-5",  title:"Alfredough 5",  brand:"alfredough", img: gp("AP1GczNzPRQQUHMRUy-EaOzBji4FcwFZ0Os2Us-ercnE") },
+    { id:"af-6",  title:"Alfredough 6",  brand:"alfredough", img: gp("AP1GczPucpoFQBPvHfqtUn3yA4twRcHDU0x7BIopPBTw") },
+    { id:"af-7",  title:"Alfredough 7",  brand:"alfredough", img: gp("AP1GczOu1_5mFm3XbTZForkQOqglYCfqlnYfKWrsaK8n") },
+    { id:"af-8",  title:"Alfredough 8",  brand:"alfredough", img: gp("AP1GczOWMRrz7tUYUwCkhGOxg2NfKeiu4WKvgj9irqrJ") },
+    { id:"af-9",  title:"Alfredough 9",  brand:"alfredough", img: gp("AP1GczPuCwyeo6oqQCSv0HyntYkPX-3-pXHsEXtDNV1h") },
+    { id:"af-10", title:"Alfredough 10", brand:"alfredough", img: gp("AP1GczOQxVwJvphmhvYLaUuChjNGWGbO14o4as7S2Vvw") },
+    { id:"af-11", title:"Alfredough 11", brand:"alfredough", img: gp("AP1GczOj_zEh-UoreeOrM1r95yvnFOrFLfYre20CzJOA") },
+    { id:"af-12", title:"Alfredough 12", brand:"alfredough", img: gp("AP1GczPWeO5h_E8dGP-Re0KrdQEyxCma3Ig_4OBKor_A") },
+    { id:"af-13", title:"Alfredough 13", brand:"alfredough", img: gp("AP1GczPZjtSgcmS2xwa5lbCUbTJBYSkxfrA_OpKrOCLe") },
+    { id:"af-14", title:"Alfredough 14", brand:"alfredough", img: gp("AP1GczODyaBo1m_QpB4Cv12DVU1uhX8zZ3HZhjD2LV75") },
+    { id:"af-15", title:"Alfredough 15", brand:"alfredough", img: gp("AP1GczN7vrFkfrsCuACvSStdstSHZdQDC6hZ9jpYAnhx") },
+    { id:"af-16", title:"Alfredough 16", brand:"alfredough", img: gp("AP1GczNuIzR0T2_pha4qLXFFmiaqsaih_gdUAUr2PtxJ") },
+    { id:"af-17", title:"Alfredough 17", brand:"alfredough", img: gp("AP1GczN--KwomUey5YbLJRZNo7_UdkCBzgvW8OKYT0rs") },
+    { id:"af-18", title:"Alfredough 18", brand:"alfredough", img: gp("AP1GczMaHDOvQITlCSKqBUCwJ0mFdos28IvBrxeqU2S7") },
+  ],
+
+  // 11. Upstairs — 19 photos
+  upstairs: [
+    { id:"up-1",  title:"Upstairs 1",  brand:"upstairs", img: gp("AP1GczMnLQnD6TIwOFU99LHw_u-Zu-4L3Rq1Kx_U560C") },
+    { id:"up-2",  title:"Upstairs 2",  brand:"upstairs", img: gp("AP1GczOH_6yp1gZkFaJTJJiloukNpKaTFcWl6OFroUmF") },
+    { id:"up-3",  title:"Upstairs 3",  brand:"upstairs", img: gp("AP1GczN5Ub2EZLfnYB6rr-lNSXEKC07d3N4nw6dd4Nza") },
+    { id:"up-4",  title:"Upstairs 4",  brand:"upstairs", img: gp("AP1GczNl6rOSZpDv6nFAnMGU7rjgvO81PZVwUppbWRLI") },
+    { id:"up-5",  title:"Upstairs 5",  brand:"upstairs", img: gp("AP1GczNKy7KCFz_kMGcjqzS-rPbY7cFAEsCEFkKVzaKD") },
+    { id:"up-6",  title:"Upstairs 6",  brand:"upstairs", img: gp("AP1GczPTF2jFaOk1GiA0sUTwsm-LjhyeWMjxek20Eng9") },
+    { id:"up-7",  title:"Upstairs 7",  brand:"upstairs", img: gp("AP1GczOmIx3sd7UjbUgkK5RicYoE8sLa6u6kJFBdaCIZ") },
+    { id:"up-8",  title:"Upstairs 8",  brand:"upstairs", img: gp("AP1GczPInk3g5B8gAg3P607yf9eF4pf2PbLe_L9LreU5") },
+    { id:"up-9",  title:"Upstairs 9",  brand:"upstairs", img: gp("AP1GczMn9r9wmsuM7c23tiRRFEHcoN61v0UMoCJ4qpyW") },
+    { id:"up-10", title:"Upstairs 10", brand:"upstairs", img: gp("AP1GczO1QljtkY2tlKdBgiQG5X_hvQXvDdfwnfJwLrdY") },
+    { id:"up-11", title:"Upstairs 11", brand:"upstairs", img: gp("AP1GczMjSGZpoFKqBqdVKA1yVa06nrjPMpmaBTXK7Z3w") },
+    { id:"up-12", title:"Upstairs 12", brand:"upstairs", img: gp("AP1GczOKhAHa9sZKAeCUTk6K1c-BB65gvczwwaUwn1Rq") },
+    { id:"up-13", title:"Upstairs 13", brand:"upstairs", img: gp("AP1GczNfMxO7TCD5RcnYJglsmgqN4EWOF5PooH6rF2gy") },
+    { id:"up-14", title:"Upstairs 14", brand:"upstairs", img: gp("AP1GczPTyziqeebhaF1MyPZErAjHoM_FynOlBS5gCI5O") },
+    { id:"up-15", title:"Upstairs 15", brand:"upstairs", img: gp("AP1GczOs1A54QLB8M66qAogFrL-M68I0_TgTo-hz9Jhm") },
+    { id:"up-16", title:"Upstairs 16", brand:"upstairs", img: gp("AP1GczNVIIosDSWTgH1744WzxbAlMhG07cIciSdV63GD") },
+    { id:"up-17", title:"Upstairs 17", brand:"upstairs", img: gp("AP1GczOs1JzuggZ3bRKxwDcJgfUAUIkx3plDYXz92nMA") },
+    { id:"up-18", title:"Upstairs 18", brand:"upstairs", img: gp("AP1GczMarUpynl9YHVNYXMH8nX3o4NCcXeOD15Qn3H_5") },
+    { id:"up-19", title:"Upstairs 19", brand:"upstairs", img: gp("AP1GczMEsi94ZRiZQD73DMaF1gP2jj7D_3HnlchNL6uT") },
+  ],
+
+  // 12. Punjab Kitchen — 15 photos
+  punjab: [
+    { id:"pk-1",  title:"Punjab Kitchen 1",  brand:"punjab", img: gp("AP1GczNq8y1OZbSdg5qsZSqTZj7_IOFMGHREgzi7lzR5") },
+    { id:"pk-2",  title:"Punjab Kitchen 2",  brand:"punjab", img: gp("AP1GczP7Aa8xXZ_1AMcXRctadbGQ0ztO31VFHOBl2BuG") },
+    { id:"pk-3",  title:"Punjab Kitchen 3",  brand:"punjab", img: gp("AP1GczM-rk9YMXsFrXhgsZYt9wjoJvJuqDs7_f3JHgQm") },
+    { id:"pk-4",  title:"Punjab Kitchen 4",  brand:"punjab", img: gp("AP1GczOyXNECjhq2b4dIGPsK3bvOWqyQm6qDIp6-xC8b") },
+    { id:"pk-5",  title:"Punjab Kitchen 5",  brand:"punjab", img: gp("AP1GczPIv0--fFoxWlW6izJspAQTaXSsWZxgM_xJP0OT") },
+    { id:"pk-6",  title:"Punjab Kitchen 6",  brand:"punjab", img: gp("AP1GczM3sbX5I7DTGowRc77qOP1-vKHxu-KNzJJRFPFN") },
+    { id:"pk-7",  title:"Punjab Kitchen 7",  brand:"punjab", img: gp("AP1GczNQy5KpTVco9loqSriztYGdh2I_2tqvT47ntVNf") },
+    { id:"pk-8",  title:"Punjab Kitchen 8",  brand:"punjab", img: gp("AP1GczMBkm1Wg0lmSD0NDjQY6d58ANdzbjyryLYewc_y") },
+    { id:"pk-9",  title:"Punjab Kitchen 9",  brand:"punjab", img: gp("AP1GczOr3FGjyNW4XS011U0Nb0_R7REz7DQ5fqB1ROj0") },
+    { id:"pk-10", title:"Punjab Kitchen 10", brand:"punjab", img: gp("AP1GczOBnDUb96QaGeG0ZLhLMmEp7bX4jKVV8AFpkO9M") },
+    { id:"pk-11", title:"Punjab Kitchen 11", brand:"punjab", img: gp("AP1GczPhIHGznbQofiyChPR4hloX_NSvx38pMqC2h3Kr") },
+    { id:"pk-12", title:"Punjab Kitchen 12", brand:"punjab", img: gp("AP1GczNf0EAuUrvZ1y5T5BuWafQQ6jVXwSnjWRYUuHT-") },
+    { id:"pk-13", title:"Punjab Kitchen 13", brand:"punjab", img: gp("AP1GczPPqXKRSLyDrovLbHaMjbUQp9qV6kyvv1QwjZEB") },
+    { id:"pk-14", title:"Punjab Kitchen 14", brand:"punjab", img: gp("AP1GczNibSkD73XVAWLPjdFy0BvvIMc_je87jhV2Zc2m") },
+    { id:"pk-15", title:"Punjab Kitchen 15", brand:"punjab", img: gp("AP1GczMrGx4v8O0bTa9X0q3KIPtMxtCxDEIUBK_EHhpP") },
+  ],
+
+  // 13. Other — 25 photos
+  other: [
+    { id:"ot-1",  title:"Other 1",  brand:"other", img: gp("AP1GczOqk1X3SjaV9ufi4eenIEEy_vSWfgTB0J8cueUi") },
+    { id:"ot-2",  title:"Other 2",  brand:"other", img: gp("AP1GczNyOhS3wNKzLogrqPDxeVb7T6dbaV9LLDzr4uFK") },
+    { id:"ot-3",  title:"Other 3",  brand:"other", img: gp("AP1GczMzutMaDZnzC8c4saMb0M38s-ZVbaVCozKdxheu") },
+    { id:"ot-4",  title:"Other 4",  brand:"other", img: gp("AP1GczNDseZ98aA9XkB0bkIlRyK9U7VmrFCAcWfzX5VR") },
+    { id:"ot-5",  title:"Other 5",  brand:"other", img: gp("AP1GczO9ef4TNTlL4qD6gjDpsuP8IQarC_5cJfOwChqe") },
+    { id:"ot-6",  title:"Other 6",  brand:"other", img: gp("AP1GczM0-7fXkBXxmJQdmiRvxqPisu0GP4xKxD63o5F0") },
+    { id:"ot-7",  title:"Other 7",  brand:"other", img: gp("AP1GczOt15nO86lFhMq7CjPhtg90BZDYT0mhnEyjzxrS") },
+    { id:"ot-8",  title:"Other 8",  brand:"other", img: gp("AP1GczOasrZrf6A0mGruql6EG6u9GV-n1tC_36WXPslS") },
+    { id:"ot-9",  title:"Other 9",  brand:"other", img: gp("AP1GczMkdf4jpTfSHONkX-e0SrF4JLA_FD2yOCPsGaVD") },
+    { id:"ot-10", title:"Other 10", brand:"other", img: gp("AP1GczNjgbXdiIx5T2c6adt2YwhxmJu4Bbh9dc0vgRWF") },
+    { id:"ot-11", title:"Other 11", brand:"other", img: gp("AP1GczOYcX9Iea6QhT9GuGkX3_jITQ9WAfY6UXLjPb_E") },
+    { id:"ot-12", title:"Other 12", brand:"other", img: gp("AP1GczM4xSl5tpAQEhUTPBhWoHn-YZn9mMipjT-DpCSt") },
+    { id:"ot-13", title:"Other 13", brand:"other", img: gp("AP1GczPIZbxIHxlYAFW_J0SOwKZZMP0Dbe6c_BjZK3bF") },
+    { id:"ot-14", title:"Other 14", brand:"other", img: gp("AP1GczMelt0_Z1d0iML76A8zCYODr79Gj0uw6IxeqRIH") },
+    { id:"ot-15", title:"Other 15", brand:"other", img: gp("AP1GczOOkinteE-QI94t4Lj_7fiAx_fEFuo6ZDqZRCPw") },
+    { id:"ot-16", title:"Other 16", brand:"other", img: gp("AP1GczPLud4GtLxTzObf1g_FBoZ0GO--_Pzpxr-ayGw1") },
+    { id:"ot-17", title:"Other 17", brand:"other", img: gp("AP1GczMh7HgbyLv3FoQw_3doeMXAf-_TlRRumrkiHm5I") },
+    { id:"ot-18", title:"Other 18", brand:"other", img: gp("AP1GczMo0Q7Xfm94CDaJ8cq8unqAxkCxoyj89l9HL22j") },
+    { id:"ot-19", title:"Other 19", brand:"other", img: gp("AP1GczPdsMwgN0hvMCFbo5SR0aTnaqOe5Ajc39FvoRwV") },
+    { id:"ot-20", title:"Other 20", brand:"other", img: gp("AP1GczOnqSCUHuO13Iigts6PMVz5yZrWOVwqe__A-OA5") },
+    { id:"ot-21", title:"Other 21", brand:"other", img: gp("AP1GczNMYfCcWYbDZIfS9OsC-wmG5nwlXPXsgvfgxfEE") },
+    { id:"ot-22", title:"Other 22", brand:"other", img: gp("AP1GczOUYJDP6jahlagrBoNO7KF0ZqqxL013wDVbKAv4") },
+    { id:"ot-23", title:"Other 23", brand:"other", img: gp("AP1GczNmnl3yRaxLDrT38YotHluGyK9N99L8Op5ctk-f") },
+    { id:"ot-24", title:"Other 24", brand:"other", img: gp("AP1GczOoJEntuKEAblZxVb0hGMY7yAbvNy4nfVckneAr") },
+    { id:"ot-25", title:"Other 25", brand:"other", img: gp("AP1GczMbnw8PbvsiQmekZV6a2Na9AOpNcUox-B13GwFG") },
+  ],
 };
 
 // ─── VIDEO DATA ────────────────────────────────────────────────
@@ -281,41 +522,24 @@ const Lightbox = ({ img, title, onClose }: { img: string; title: string; onClose
 };
 
 // ─── IMAGE GRID with See More + Lightbox ──────────────────────
-// shuffleOnChange=true → re-shuffles when items change (category tab switch)
-// shuffleOnChange=false → stable order (brand section)
-const ImageGrid = ({
-  items,
-  shuffleOnChange = false,
-}: {
-  items: { id: string; title: string; img: string; category?: string; brand?: string }[];
-  shuffleOnChange?: boolean;
-}) => {
+const ImageGrid = ({ items }: { items: { id: string; title: string; img: string; category?: string; brand?: string }[] }) => {
   const [visible, setVisible] = useState(8);
   const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
-  const [displayedItems, setDisplayedItems] = useState(() =>
-    shuffleOnChange ? shuffle(items) : items
-  );
-
-  // When category tab changes → reshuffle + reset visible count
-  useEffect(() => {
-    setDisplayedItems(shuffleOnChange ? shuffle(items) : items);
-    setVisible(8);
-  }, [items, shuffleOnChange]);
 
   return (
     <>
       {lightbox && <Lightbox img={lightbox.img} title={lightbox.title} onClose={() => setLightbox(null)} />}
 
       <motion.div layout className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-        <AnimatePresence initial={false}>
-          {displayedItems.slice(0, visible).map((item, index) => (
+        <AnimatePresence>
+          {items.slice(0, visible).map((item, index) => (
             <motion.div
               key={item.id}
               layout
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.35, delay: Math.min(index * 0.04, 0.3) }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ delay: Math.min(index * 0.03, 0.3) }}
               onClick={() => setLightbox({ img: item.img, title: item.title })}
               className="group relative overflow-hidden rounded-2xl bg-primary border border-white/5 hover:neon-border cursor-pointer break-inside-avoid mb-6"
             >
@@ -336,7 +560,7 @@ const ImageGrid = ({
         </AnimatePresence>
       </motion.div>
 
-      {visible < displayedItems.length && (
+      {visible < items.length && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -658,7 +882,7 @@ export default function App() {
                   </p>
                 </div>
 
-                <ImageGrid key={activeCategory} items={filtered} shuffleOnChange={true} />
+                <ImageGrid key={activeCategory} items={filtered} />
               </motion.div>
             ) : (
               <motion.div
