@@ -1080,45 +1080,53 @@ export default function App() {
           <SectionTitle subtitle="Brands I've had the privilege to work with.">
             Clients
           </SectionTitle>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {[
-              { name: "Monno Ceramic", color: "#00C9FF" },
-              { name: "Second Cup",    color: "#6D4C41" },
-              { name: "ACI Neem",      color: "#76FF03" },
-              { name: "Indulge",       color: "#D57E80" },
-              { name: "Eastern Agro",  color: "#F9A825" },
-              { name: "Wellness Cafe", color: "#00E5FF" },
-              { name: "Coffeelime",    color: "#FFEA00" },
-              { name: "So Juicy",      color: "#FF3CAC" },
-              { name: "Route 66",      color: "#FF6B35" },
-              { name: "Alfredough",    color: "#E040FB" },
-              { name: "Upstairs",      color: "#40C4FF" },
-              { name: "Punjab Kitchen",color: "#FF6E40" },
+              { name: "Monno Ceramic",  id: "monno",       logo: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Monno_ljareq.jpg" },
+              { name: "Second Cup",     id: "secondcup",   logo: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Secondcup_uhjdl5.jpg" },
+              { name: "ACI Neem",       id: "acineem",     logo: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Aci-Neem_dauklr.jpg" },
+              { name: "Indulge",        id: "indulge",     logo: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Indulge_cvxbip.jpg" },
+              { name: "Eastern Agro",   id: "easternagro", logo: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Eastern-Agro_yevvyd.jpg" },
+              { name: "Wellness Cafe",  id: "wellness",    logo: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Wellness_br8rce.jpg" },
+              { name: "Coffeelime",     id: "coffeelime",  logo: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Coffeelime_uvxfle.jpg" },
+              { name: "So Juicy",       id: "soojuicy",    logo: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/So-Juicy_deloir.jpg" },
+              { name: "Route 66",       id: "route66",     logo: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Route-66_oklhbq.jpg" },
+              { name: "Alfredough",     id: "alfredough",  logo: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Alfredough_faequn.jpg" },
+              { name: "Upstairs",       id: "upstairs",    logo: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Upsatirs_ejprn9.jpg" },
+              { name: "Punjab Kitchen", id: "punjab",      logo: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Punjab-Kitchen_deaiq1.jpg" },
             ].map((client, i) => (
-              <motion.div
+              <motion.a
                 key={client.name}
+                href="#work"
+                onClick={() => {
+                  setWorkTab("brand");
+                  setActiveBrand(client.id);
+                }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                whileHover={{ scale: 1.05 }}
-                className="flex flex-col items-center justify-center p-5 rounded-2xl bg-primary/50 border border-white/5 hover:border-white/20 transition-all cursor-default"
-                style={{ borderColor: client.color + "20" }}
+                whileHover={{ scale: 1.05, y: -4 }}
+                className="group flex flex-col items-center justify-center p-4 rounded-2xl bg-primary/50 border border-white/5 hover:border-white/20 transition-all cursor-pointer"
               >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold mb-3"
-                  style={{ backgroundColor: client.color + "20", color: client.color, border: `1px solid ${client.color}40` }}
-                >
-                  {client.name[0]}
+                <div className="w-full h-16 flex items-center justify-center mb-2 overflow-hidden rounded-xl bg-white/5 p-2">
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    referrerPolicy="no-referrer"
+                    className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                  />
                 </div>
-                <span className="text-xs font-medium text-center text-subtext leading-tight">{client.name}</span>
-              </motion.div>
+                <span className="text-xs font-medium text-center text-subtext group-hover:text-white transition-colors leading-tight">
+                  {client.name}
+                </span>
+              </motion.a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Video & Motion ── */}
+            {/* ── Video & Motion ── */}
       <section id="video" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <SectionTitle subtitle="Dynamic motion graphics and high-end video editing for modern platforms.">
