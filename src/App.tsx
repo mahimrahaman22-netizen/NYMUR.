@@ -155,6 +155,15 @@ const carouselItems = [
   { id:"ca-17", title:"Facebook Carousel Ad 17", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview_pwl8df.jpg" },
 ];
 
+const portfolioItems = [
+  ...socialMediaItems,
+  ...carouselItems,
+  ...makePlaceholders("Print Item", 20, "prt"),
+  ...makePlaceholders("Branding", 20, "brd"),
+  ...makePlaceholders("AI Food Photography", 20, "afp"),
+  ...makePlaceholders("Edited Image (Before/After)", 20, "eba"),
+];
+
 const brandItems: Record<string, { id: string; title: string; brand: string; img: string }[]> = {
 
 
