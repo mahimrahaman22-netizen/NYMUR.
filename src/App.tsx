@@ -669,15 +669,25 @@ const Lightbox = ({ img, title, onClose }: { img: string; title: string; onClose
 };
 
 // ─── IMAGE GRID with See More + Lightbox ──────────────────────
-const ImageGrid = ({ items }: { items: { id: string; title: string; img: string; category?: string; brand?: string }[] }) => {
+const ImageGrid = ({ items, brandName }: { items: { id: string; title: string; img: string; category?: string; brand?: string }[]; brandName?: string }) => {
   const [visible, setVisible] = useState(8);
   const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
+  const remaining = items.length - visible;
+
+  const getLabel = (item: { brand?: string; category?: string }) => {
+    if (brandName) return brandName;
+    if (item.brand) {
+      const parts = item.brand.replace(/_/g, ' ').split(' ');
+      return parts.map((p: string) => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
+    }
+    return item.category || '';
+  };
 
   return (
     <>
       {lightbox && <Lightbox img={lightbox.img} title={lightbox.title} onClose={() => setLightbox(null)} />}
 
-      <motion.div layout className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+      <motion.div layout className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
         <AnimatePresence>
           {items.slice(0, visible).map((item, index) => (
             <motion.div
@@ -688,7 +698,7 @@ const ImageGrid = ({ items }: { items: { id: string; title: string; img: string;
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ delay: Math.min(index * 0.03, 0.3) }}
               onClick={() => setLightbox({ img: item.img, title: item.title })}
-              className="group relative overflow-hidden rounded-2xl bg-primary border border-white/5 hover:neon-border cursor-pointer break-inside-avoid mb-6"
+              className="group relative overflow-hidden rounded-xl border border-white/5 hover:border-white/15 cursor-pointer break-inside-avoid mb-4"
             >
               <img
                 src={item.img}
@@ -696,11 +706,10 @@ const ImageGrid = ({ items }: { items: { id: string; title: string; img: string;
                 referrerPolicy="no-referrer"
                 className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-primary via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <span className="text-neon-cyan text-xs font-bold tracking-widest uppercase mb-2">
-                  {item.category || item.brand}
+              <div className="absolute bottom-0 left-0 right-0 p-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <span className="inline-block text-white text-xs font-medium px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm">
+                  {getLabel(item)}
                 </span>
-                <h3 className="text-xl font-bold">{item.title}</h3>
               </div>
             </motion.div>
           ))}
@@ -708,17 +717,14 @@ const ImageGrid = ({ items }: { items: { id: string; title: string; img: string;
       </motion.div>
 
       {visible < items.length && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="flex justify-center mt-10"
-        >
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-center mt-8">
           <button
             onClick={() => setVisible((v) => v + 8)}
-            className="group px-8 py-3 rounded-full border border-neon-blue/40 text-sm font-semibold text-neon-blue hover:bg-neon-blue/10 hover:neon-glow transition-all flex items-center gap-2"
+            className="group px-5 py-2 rounded-full border border-neon-blue/40 text-sm font-medium text-neon-blue hover:bg-neon-blue/10 transition-all flex items-center gap-2"
           >
-            See More
-            <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+            Show More Designs
+            <span className="text-xs opacity-60 bg-neon-blue/10 px-2 py-0.5 rounded-full">{remaining} left</span>
+            <ChevronDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
           </button>
         </motion.div>
       )}
@@ -927,24 +933,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* Floating badges — bottom right corner over image */}
-        <motion.div
-          animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-32 right-10 z-10 px-5 py-3 rounded-2xl bg-black/60 border border-neon-blue/30 backdrop-blur-sm hidden md:flex items-center gap-2"
-        >
-          <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-          <span className="text-sm font-bold text-white">Top Rated Designer</span>
-        </motion.div>
 
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute top-36 right-10 z-10 px-4 py-3 rounded-2xl bg-black/60 border border-neon-cyan/30 backdrop-blur-sm hidden md:flex items-center gap-2"
-        >
-          <Sparkles className="w-4 h-4 text-neon-cyan" />
-          <span className="text-sm font-bold text-neon-cyan">AI Enhanced</span>
-        </motion.div>
       </section>
 
       {/* ── Hero (original) ── */}
@@ -1038,67 +1027,42 @@ export default function App() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
               >
-                {/* Brand buttons — horizontal side by side */}
-                <div className="flex flex-wrap gap-3 mb-8">
+                {/* Brand buttons — minimal horizontal */}
+                <div className="flex flex-wrap gap-2 mb-6">
                   {BRANDS.map((brand) => {
                     const isOpen = activeBrand === brand.id;
                     return (
                       <button
                         key={brand.id}
                         onClick={() => setActiveBrand(isOpen ? "" : brand.id)}
-                        className="flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold transition-all border"
+                        className="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all border"
                         style={
                           isOpen
-                            ? { backgroundColor: brand.color + "20", borderColor: brand.color, color: brand.color, boxShadow: `0 0 14px ${brand.color}40` }
-                            : { borderColor: "rgba(255,255,255,0.1)", color: "#9ca3af" }
+                            ? { backgroundColor: brand.color + "20", borderColor: brand.color, color: brand.color, boxShadow: `0 0 10px ${brand.color}30` }
+                            : { borderColor: "rgba(255,255,255,0.08)", color: "#6b7280" }
                         }
                       >
-                        <span
-                          className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
-                          style={{ backgroundColor: brand.color + "30", color: brand.color }}
-                        >
-                          {brand.name[0]}
-                        </span>
                         {brand.name}
-                        <span className="text-xs opacity-60">({(brandItems[brand.id] || []).length})</span>
                       </button>
                     );
                   })}
                 </div>
 
-                {/* Brand content — expands below */}
+                {/* Brand content */}
                 <AnimatePresence mode="wait">
                   {activeBrand && (
                     <motion.div
                       key={activeBrand}
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.25 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.2 }}
                     >
-                      {/* Brand header strip */}
                       {(() => {
                         const brand = BRANDS.find(b => b.id === activeBrand);
                         const items = brandItems[activeBrand] || [];
                         return (
-                          <>
-                            <div
-                              className="flex items-center gap-3 mb-6 px-5 py-3 rounded-xl"
-                              style={{ backgroundColor: brand?.color + "10", border: `1px solid ${brand?.color}30` }}
-                            >
-                              <div
-                                className="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm"
-                                style={{ backgroundColor: brand?.color + "25", color: brand?.color }}
-                              >
-                                {brand?.name[0]}
-                              </div>
-                              <div>
-                                <p className="font-bold text-white">{brand?.name}</p>
-                                <p className="text-xs text-subtext">{items.length} designs</p>
-                              </div>
-                            </div>
-                            <ImageGrid key={activeBrand} items={items} />
-                          </>
+                          <ImageGrid key={activeBrand} items={items} brandName={brand?.name} />
                         );
                       })()}
                     </motion.div>
@@ -1107,6 +1071,50 @@ export default function App() {
               </motion.div>
             )}
           </AnimatePresence>
+        </div>
+      </section>
+
+      {/* ── Clients Section ── */}
+      <section id="clients" className="py-16 px-6 bg-secondary/20">
+        <div className="max-w-7xl mx-auto">
+          <SectionTitle subtitle="Brands I've had the privilege to work with.">
+            Clients
+          </SectionTitle>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            {[
+              { name: "Monno Ceramic", color: "#00C9FF" },
+              { name: "Second Cup",    color: "#6D4C41" },
+              { name: "ACI Neem",      color: "#76FF03" },
+              { name: "Indulge",       color: "#D57E80" },
+              { name: "Eastern Agro",  color: "#F9A825" },
+              { name: "Wellness Cafe", color: "#00E5FF" },
+              { name: "Coffeelime",    color: "#FFEA00" },
+              { name: "So Juicy",      color: "#FF3CAC" },
+              { name: "Route 66",      color: "#FF6B35" },
+              { name: "Alfredough",    color: "#E040FB" },
+              { name: "Upstairs",      color: "#40C4FF" },
+              { name: "Punjab Kitchen",color: "#FF6E40" },
+            ].map((client, i) => (
+              <motion.div
+                key={client.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                whileHover={{ scale: 1.05 }}
+                className="flex flex-col items-center justify-center p-5 rounded-2xl bg-primary/50 border border-white/5 hover:border-white/20 transition-all cursor-default"
+                style={{ borderColor: client.color + "20" }}
+              >
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold mb-3"
+                  style={{ backgroundColor: client.color + "20", color: client.color, border: `1px solid ${client.color}40` }}
+                >
+                  {client.name[0]}
+                </div>
+                <span className="text-xs font-medium text-center text-subtext leading-tight">{client.name}</span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -1259,41 +1267,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Testimonials */}
-            <div className="mt-12">
-              <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                <span className="w-8 h-[2px] bg-neon-blue" />
-                What Clients Say
-              </h3>
-              <div className="space-y-4">
-                {testimonials.map((t, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="p-5 rounded-2xl bg-secondary/30 border border-white/5"
-                  >
-                    <div className="flex gap-1 mb-3">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
-                      ))}
-                    </div>
-                    <p className="text-body italic mb-4 text-sm">"{t.text}"</p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-neon-blue/20 flex items-center justify-center text-neon-blue font-bold text-sm">
-                        {t.name[0]}
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-sm">{t.name}</h4>
-                        <p className="text-xs text-subtext">{t.role}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
