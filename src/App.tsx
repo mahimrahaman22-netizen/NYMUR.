@@ -136,23 +136,23 @@ const socialMediaItems = [
 ];
 
 const carouselItems = [
-  { id:"ca-1", title:"Facebook Carousel Ad 1", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview3_e9qj96.jpg" },
-  { id:"ca-2", title:"Facebook Carousel Ad 2", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_10_c7eboa.jpg" },
-  { id:"ca-3", title:"Facebook Carousel Ad 3", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_11_ymrkzd.jpg" },
-  { id:"ca-4", title:"Facebook Carousel Ad 4", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_12_lbpktu.jpg" },
-  { id:"ca-5", title:"Facebook Carousel Ad 5", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_13_szerbl.jpg" },
-  { id:"ca-6", title:"Facebook Carousel Ad 6", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_14_n20msz.jpg" },
-  { id:"ca-7", title:"Facebook Carousel Ad 7", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_3_xdlsrc.jpg" },
-  { id:"ca-8", title:"Facebook Carousel Ad 8", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_4_nj7tyn.jpg" },
-  { id:"ca-9", title:"Facebook Carousel Ad 9", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_5_i22ryn.jpg" },
-  { id:"ca-10", title:"Facebook Carousel Ad 10", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_6_li1liq.jpg" },
-  { id:"ca-11", title:"Facebook Carousel Ad 11", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_8_emidth.jpg" },
-  { id:"ca-12", title:"Facebook Carousel Ad 12", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview-copy_fzpzy2.jpg" },
-  { id:"ca-13", title:"Facebook Carousel Ad 13", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview.1_oisl3v.jpg" },
-  { id:"ca-14", title:"Facebook Carousel Ad 14", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview_2_co2x9r.jpg" },
-  { id:"ca-15", title:"Facebook Carousel Ad 15", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview_7_drklpl.jpg" },
-  { id:"ca-16", title:"Facebook Carousel Ad 16", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview_9_bxfiil.jpg" },
-  { id:"ca-17", title:"Facebook Carousel Ad 17", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview_pwl8df.jpg" },
+  { id:"ca-399", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview3_e9qj96.jpg" },
+  { id:"ca-107", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_10_c7eboa.jpg" },
+  { id:"ca-11", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_11_ymrkzd.jpg" },
+  { id:"ca-12", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_12_lbpktu.jpg" },
+  { id:"ca-13", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_13_szerbl.jpg" },
+  { id:"ca-142", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_14_n20msz.jpg" },
+  { id:"ca-3", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_3_xdlsrc.jpg" },
+  { id:"ca-47", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_4_nj7tyn.jpg" },
+  { id:"ca-522", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_5_i22ryn.jpg" },
+  { id:"ca-61", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_6_li1liq.jpg" },
+  { id:"ca-8", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/Preview_8_emidth.jpg" },
+  { id:"ca-2", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview-copy_fzpzy2.jpg" },
+  { id:"ca-13", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview.1_oisl3v.jpg" },
+  { id:"ca-229", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview_2_co2x9r.jpg" },
+  { id:"ca-7", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview_7_drklpl.jpg" },
+  { id:"ca-9", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview_9_bxfiil.jpg" },
+  { id:"ca-8", title:"Facebook Carousel Ad", category:"Facebook Carousel Ads", img: "https://res.cloudinary.com/dpbclovni/image/upload/Facebook_Carousel_Ads/preview_pwl8df.jpg" },
 ];
 
 const portfolioItems = [
@@ -164,9 +164,32 @@ const portfolioItems = [
   ...makePlaceholders("Edited Image (Before/After)", 20, "eba"),
 ];
 
+// Helper to build a Google Photos direct URL from photo ID
+const gp = (id: string) => `https://lh3.googleusercontent.com/pw/${id}=w800-no`;
+
 const brandItems: Record<string, { id: string; title: string; brand: string; img: string }[]> = {
+    monno: [
+    { id:"mc-1", title:"Monno Ceramic 1", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Berry_Bowls_dtuyqa.jpg" },
+    { id:"mc-2", title:"Monno Ceramic 2", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Bespoke.1_pcdtti.jpg" },
+    { id:"mc-3", title:"Monno Ceramic 3", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Bijoy-2024.01_vf06xq.jpg" },
+    { id:"mc-4", title:"Monno Ceramic 4", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Bijoy-2024.2_boie2v.jpg" },
+    { id:"mc-5", title:"Monno Ceramic 5", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Bijoy-2024_fyccoa.jpg" },
+    { id:"mc-6", title:"Monno Ceramic 6", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Black-Friday_sr70ii.jpg" },
+    { id:"mc-7", title:"Monno Ceramic 7", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Blush-bloom_cfwpyx.jpg" },
+    { id:"mc-8", title:"Monno Ceramic 8", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Corporate-Mug-Post-02_uru7rb.jpg" },
+    { id:"mc-9", title:"Monno Ceramic 9", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Delivery-Post-02.1_xn39cw.jpg" },
+    { id:"mc-10", title:"Monno Ceramic 10", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Delivery-Post-02_orn7bo.jpg" },
+    { id:"mc-11", title:"Monno Ceramic 11", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Delivery-Post_aushsh.jpg" },
+    { id:"mc-12", title:"Monno Ceramic 12", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Facebook_Cover_jalcik.jpg" },
+    { id:"mc-13", title:"Monno Ceramic 13", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Location-Post6_levxi4.jpg" },
+    { id:"mc-14", title:"Monno Ceramic 14", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Location-Post_ff53e5.jpg" },
+    { id:"mc-15", title:"Monno Ceramic 15", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Louts_bvvbdq.jpg" },
+    { id:"mc-16", title:"Monno Ceramic 16", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Onyx_gold_ac2tbz.jpg" },
+    { id:"mc-17", title:"Monno Ceramic 17", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/Preview_hphbg7.jpg" },
+    { id:"mc-18", title:"Monno Ceramic 18", brand:"monno", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778909968/bloom-blue-02_nnusxt.jpg" },
+  ],
 
-
+  // 2. Second Cup
   secondcup: [
     { id:"sc-1", title:"Second Cup 1", brand:"secondcup", img: "https://res.cloudinary.com/dpbclovni/image/upload/Second_Cup/03_iuxcmf.jpg" },
     { id:"sc-2", title:"Second Cup 2", brand:"secondcup", img: "https://res.cloudinary.com/dpbclovni/image/upload/Second_Cup/04_kn9qwf.jpg" },
@@ -179,8 +202,43 @@ const brandItems: Record<string, { id: string; title: string; brand: string; img
     { id:"sc-9", title:"Second Cup 9", brand:"secondcup", img: "https://res.cloudinary.com/dpbclovni/image/upload/Second_Cup/5_an2iaf.jpg" },
   ],
 
+  // 3. ACI Neem — 22 photos
+    acineem: [
+    { id:"an-1", title:"Aci Neem 1", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/01.4_c6rzqv.jpg" },
+    { id:"an-2", title:"Aci Neem 2", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/02_ujeuth.jpg" },
+    { id:"an-3", title:"Aci Neem 3", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/03.9_ne29s7.jpg" },
+    { id:"an-4", title:"Aci Neem 4", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/04.1_xigse0.jpg" },
+    { id:"an-5", title:"Aci Neem 5", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/05.5_vqearh.jpg" },
+    { id:"an-6", title:"Aci Neem 6", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/06_xhv7te.jpg" },
+    { id:"an-7", title:"Aci Neem 7", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/07_lv0hxl.jpg" },
+    { id:"an-8", title:"Aci Neem 8", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/08.1.1_q7lm1u.jpg" },
+    { id:"an-9", title:"Aci Neem 9", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/09_xrds8d.jpg" },
+    { id:"an-10", title:"Aci Neem 10", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/10.2_wj9zke.jpg" },
+    { id:"an-11", title:"Aci Neem 11", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/11.1_mlx0mz.jpg" },
+    { id:"an-12", title:"Aci Neem 12", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/12.2_uc1ypv.jpg" },
+    { id:"an-13", title:"Aci Neem 13", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/13.1.3_vht2dc.jpg" },
+    { id:"an-14", title:"Aci Neem 14", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/14.2_ydi1db.jpg" },
+    { id:"an-15", title:"Aci Neem 15", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/15.1_gwkckp.jpg" },
+    { id:"an-16", title:"Aci Neem 16", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/16.1.2_z0iefy.jpg" },
+    { id:"an-17", title:"Aci Neem 17", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/17_tfsz9q.jpg" },
+    { id:"an-18", title:"Aci Neem 18", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/18.1_ojxrri.jpg" },
+    { id:"an-19", title:"Aci Neem 19", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/19_nuvk1e.jpg" },
+    { id:"an-20", title:"Aci Neem 20", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/20_vqlu4j.jpg" },
+    { id:"an-21", title:"Aci Neem 21", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/21.1_ouur1y.jpg" },
+    { id:"an-22", title:"Aci Neem 22", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/22.1_urtkke.jpg" },
+    { id:"an-23", title:"Aci Neem 23", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/23_lgzawb.jpg" },
+    { id:"an-24", title:"Aci Neem 24", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/24.1_ngj2rn.jpg" },
+    { id:"an-25", title:"Aci Neem 25", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/25.8_brjnyw.jpg" },
+    { id:"an-26", title:"Aci Neem 26", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/26_q3k6wy.jpg" },
+    { id:"an-27", title:"Aci Neem 27", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/27.3_adytzb.jpg" },
+    { id:"an-28", title:"Aci Neem 28", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/29.1.3_eppmlq.jpg" },
+    { id:"an-29", title:"Aci Neem 29", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/30.2_frfotk.jpg" },
+    { id:"an-30", title:"Aci Neem 30", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/31.4_mfyr0y.jpg" },
+    { id:"an-31", title:"Aci Neem 31", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/32_vwvid6.jpg" },
+    { id:"an-32", title:"Aci Neem 32", brand:"acineem", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778908181/33.3_zgm9jp.jpg" },
+  ],
 
-
+  // 4. Indulge
   indulge: [
     { id:"in-1", title:"Indulge 1", brand:"indulge", img: "https://res.cloudinary.com/dpbclovni/image/upload/Indulge/01.1_zjngaj.jpg" },
     { id:"in-2", title:"Indulge 2", brand:"indulge", img: "https://res.cloudinary.com/dpbclovni/image/upload/Indulge/01_xbgehp.jpg" },
@@ -221,6 +279,7 @@ const brandItems: Record<string, { id: string; title: string; brand: string; img
     { id:"in-37", title:"Indulge 37", brand:"indulge", img: "https://res.cloudinary.com/dpbclovni/image/upload/Indulge/35_hewcjd.jpg" },
   ],
 
+  // 5. Eastern Agro
   easternagro: [
     { id:"ea-1", title:"Eastern Agro 1", brand:"easternagro", img: "https://res.cloudinary.com/dpbclovni/image/upload/Eastern_Agro/01.1_b9bxgb.jpg" },
     { id:"ea-2", title:"Eastern Agro 2", brand:"easternagro", img: "https://res.cloudinary.com/dpbclovni/image/upload/Eastern_Agro/02_z3mzpx.jpg" },
@@ -258,10 +317,12 @@ const brandItems: Record<string, { id: string; title: string; brand: string; img
     { id:"ea-34", title:"Eastern Agro 34", brand:"easternagro", img: "https://res.cloudinary.com/dpbclovni/image/upload/Eastern_Agro/5_sm3vwj.jpg" },
   ],
 
+  // 6. Wellness Cafe — placeholder
   wellness: makeBrandPlaceholders("wellness", "Wellness Cafe", 10),
   coffeelime: makeBrandPlaceholders("coffeelime", "Coffeelime & Bubbletime", 10),
   soojuicy: makeBrandPlaceholders("soojuicy", "So Juicy", 10),
 
+  // 9. Route 66
   route66: [
     { id:"r6-1", title:"Route 66 1", brand:"route66", img: "https://res.cloudinary.com/dpbclovni/image/upload/Route_66/01_2_bi02c9.jpg" },
     { id:"r6-2", title:"Route 66 2", brand:"route66", img: "https://res.cloudinary.com/dpbclovni/image/upload/Route_66/01_l9uljt.jpg" },
@@ -301,6 +362,7 @@ const brandItems: Record<string, { id: string; title: string; brand: string; img
     { id:"r6-36", title:"Route 66 36", brand:"route66", img: "https://res.cloudinary.com/dpbclovni/image/upload/Route_66/40_cxxwsq.jpg" },
   ],
 
+  // 10. Alfredough
   alfredough: [
     { id:"af-1", title:"Alfredough 1", brand:"alfredough", img: "https://res.cloudinary.com/dpbclovni/image/upload/alfredough/04_aqgaqd.jpg" },
     { id:"af-2", title:"Alfredough 2", brand:"alfredough", img: "https://res.cloudinary.com/dpbclovni/image/upload/alfredough/07._o9uzaf.jpg" },
@@ -319,6 +381,7 @@ const brandItems: Record<string, { id: string; title: string; brand: string; img
     { id:"af-15", title:"Alfredough 15", brand:"alfredough", img: "https://res.cloudinary.com/dpbclovni/image/upload/alfredough/5_faf3km.jpg" },
   ],
 
+  // 11. Upstairs
   upstairs: [
     { id:"up-1", title:"Upstairs 1", brand:"upstairs", img: "https://res.cloudinary.com/dpbclovni/image/upload/Upstairs/01_lfud0x.jpg" },
     { id:"up-2", title:"Upstairs 2", brand:"upstairs", img: "https://res.cloudinary.com/dpbclovni/image/upload/Upstairs/02_ebds3z.jpg" },
@@ -342,6 +405,7 @@ const brandItems: Record<string, { id: string; title: string; brand: string; img
     { id:"up-20", title:"Upstairs 20", brand:"upstairs", img: "https://res.cloudinary.com/dpbclovni/image/upload/Upstairs/24_v5vvpj.jpg" },
   ],
 
+  // 12. Punjab Kitchen
   punjab: [
     { id:"pk-1", title:"Punjab Kitchen 1", brand:"punjab", img: "https://res.cloudinary.com/dpbclovni/image/upload/Punjab_KItchen/03.1_rbucyk.jpg" },
     { id:"pk-2", title:"Punjab Kitchen 2", brand:"punjab", img: "https://res.cloudinary.com/dpbclovni/image/upload/Punjab_KItchen/05.2_wdaiwz.jpg" },
@@ -361,6 +425,7 @@ const brandItems: Record<string, { id: string; title: string; brand: string; img
     { id:"pk-16", title:"Punjab Kitchen 16", brand:"punjab", img: "https://res.cloudinary.com/dpbclovni/image/upload/Punjab_KItchen/36_r8kfcb.jpg" },
   ],
 
+  // 13. Other
   other: [
     { id:"ot-1", title:"Other 1", brand:"other", img: "https://res.cloudinary.com/dpbclovni/image/upload/Other/01.1_2_dqhox3.jpg" },
     { id:"ot-2", title:"Other 2", brand:"other", img: "https://res.cloudinary.com/dpbclovni/image/upload/Other/01.1_ia4pqk.jpg" },
