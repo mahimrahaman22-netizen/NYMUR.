@@ -135,6 +135,8 @@ const socialMediaItems = [
   { id:"smp-52", title:"Social Media Post 052", category:"Social Media Post", img: "https://res.cloudinary.com/dpbclovni/image/upload/v1778873618/New%20folder/051_s6bya6.jpg" },
 ];
 
+const carouselItems = makePlaceholders("Facebook Carousel Ads", 20, "carousel");
+
 const portfolioItems = [
   ...socialMediaItems,
   ...carouselItems,
